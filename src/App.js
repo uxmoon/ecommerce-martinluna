@@ -1,12 +1,13 @@
-import MiModulo from "./MiModulo";
-import Header from "./Header";
+import NavBar from "./components/NavBar";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <MiModulo />
+      <header>
+        <h1>eCommerce</h1>
+        <NavBar />
+      </header>
     </div>
   );
 }
