@@ -3,7 +3,9 @@ import "./ItemListContainer.css";
 const ItemListContainer = ({ greeting = "invitado" }) => {
   return (
     <div className="ItemListContainer">
-      <h2>Hola {greeting}!</h2>
+      <div className="ItemListContainer-container">
+        <h2>Hola {greeting}!</h2>
+      </div>
     </div>
   );
 };
