@@ -1,0 +1,6 @@
+.ItemListContainer {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 0 1rem;
+}
