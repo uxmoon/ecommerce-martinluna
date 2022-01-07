@@ -1,0 +1,14 @@
+.CartWidget {
+  display: inline-flex;
+  align-items: center;
+  background-color: #999;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+}
+
+.CartWidget svg {
+  width: 1rem;
+  fill: currentColor;
+  margin-right: 0.5rem;
+}
