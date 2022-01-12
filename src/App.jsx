@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import { ItemCount } from "./components/ItemCount";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <h1>eCommerce</h1>
         <NavBar />
         <ItemListContainer greeting="Martin" />
+        <ItemCount />
       </header>
     </div>
   );
