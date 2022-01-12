@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ItemCount.css";
 
 export const ItemCount = () => {
   // Inicio estado con un producto seleccionado por defecto
@@ -27,16 +28,24 @@ export const ItemCount = () => {
   };
 
   return (
-    <div>
+    <div className="ItemCount">
       {/* Muestro el stock disponible */}
       <p>Stock disponible: {stockDisponible}</p>
 
-      {/* Botones para agrega o quitar productos */}
-      <button onClick={restar}>restar</button>
-      {contador}
-      <button onClick={sumar}>sumar</button>
+      <div className="ItemCount-actions">
+        {/* Botones para agrega o quitar productos */}
+        <button className="ItemCount-button" onClick={restar}>
+          -
+        </button>
+        <div className="ItemCount-number">{contador}</div>
+        <button className="ItemCount-button" onClick={sumar}>
+          +
+        </button>
+      </div>
 
-      <button onClick={agregarProducto}>Agregar al carrito</button>
+      <button onClick={agregarProducto} className="Button">
+        Agregar al carrito
+      </button>
     </div>
   );
 };
