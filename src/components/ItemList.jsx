@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { data } from "../products";
 import Item from "./Item";
+import "./ItemList.css";
 
 function ItemList() {
   const [productos, setProductos] = useState([]);
@@ -10,8 +11,8 @@ function ItemList() {
   useEffect(() => {
     const promesaProductos = new Promise((response, reject) => {
       setTimeout(() => {
-        // response(data);
-        reject("Se produjo un error");
+        response(data);
+        // reject("Se produjo un error");
       }, 2000);
     });
 
@@ -30,11 +31,11 @@ function ItemList() {
     <div>
       <p>Listado de productos</p>
       {isLoaded ? (
-        <>
+        <div className="ItemList">
           {productos.map((producto) => (
             <Item key={producto.id} producto={producto} />
           ))}
-        </>
+        </div>
       ) : (
         <p>Cargando productos...</p>
       )}
