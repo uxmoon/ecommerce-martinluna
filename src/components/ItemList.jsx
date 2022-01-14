@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { data } from "../products";
 import Item from "./Item";
 
 function ItemList() {
@@ -7,7 +8,7 @@ function ItemList() {
   useEffect(() => {
     const promesaProductos = new Promise((response, reject) => {
       setTimeout(() => {
-        response(["Celular", "Notebook", "Monitor"]);
+        response(data);
         // reject("Se produjo un error")
       }, 2000);
     });
@@ -25,7 +26,7 @@ function ItemList() {
     <div>
       <p>Item List</p>
       {productos.map((producto) => (
-        <Item producto={producto} />
+        <Item key={producto.id} producto={producto} />
       ))}
     </div>
   );
