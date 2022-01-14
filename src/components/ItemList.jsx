@@ -5,12 +5,13 @@ import Item from "./Item";
 function ItemList() {
   const [productos, setProductos] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [message, setMessage] = useState(false);
 
   useEffect(() => {
     const promesaProductos = new Promise((response, reject) => {
       setTimeout(() => {
-        response(data);
-        // reject("Se produjo un error");
+        // response(data);
+        reject("Se produjo un error");
       }, 2000);
     });
 
@@ -21,6 +22,7 @@ function ItemList() {
       })
       .catch((err) => {
         console.log(err);
+        setMessage(true);
       });
   });
 
@@ -35,6 +37,14 @@ function ItemList() {
         </>
       ) : (
         <p>Cargando productos...</p>
+      )}
+      {message && (
+        <div className="message alert">
+          <h2 className="title">Dificultades técnicas</h2>
+          <p className="description">
+            No se pueden mostrar los productos en este momento.
+          </p>
+        </div>
       )}
     </div>
   );
