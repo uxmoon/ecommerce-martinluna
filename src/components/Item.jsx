@@ -1,7 +1,14 @@
 function Item({ producto }) {
+  const { title, price, description } = producto;
   return (
     <div>
-      <p>{producto}</p>
+      <h2>{title}</h2>
+      <h3>{price}</h3>
+      <ul>
+        {description.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
