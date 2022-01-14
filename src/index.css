@@ -57,3 +57,17 @@ code {
 .message .description {
   font-size: 0.875rem;
 }
+
+/* loader */
+
+.loader {
+  background-color: #eee;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 4rem;
+}
+
+.loader p {
+  text-align: center;
+  font-size: 1.5rem;
+}

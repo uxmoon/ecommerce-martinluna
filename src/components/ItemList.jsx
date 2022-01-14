@@ -37,7 +37,9 @@ function ItemList() {
           ))}
         </div>
       ) : (
-        <p>Cargando productos...</p>
+        <div className="loader">
+          <p>Cargando productos...</p>
+        </div>
       )}
       {message && (
         <div className="message alert">
