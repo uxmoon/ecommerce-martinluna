@@ -36,3 +36,24 @@ code {
 .Button:hover {
   background-color: #1565c0;
 }
+
+/* Alertas */
+
+.message {
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-bottom: 2rem;
+}
+
+.message.alert {
+  background-color: #fdeded;
+  color: #5f2120;
+}
+
+.message .title {
+  font-size: 1rem;
+}
+
+.message .description {
+  font-size: 0.875rem;
+}
