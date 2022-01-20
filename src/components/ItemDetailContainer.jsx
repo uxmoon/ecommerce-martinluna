@@ -24,7 +24,14 @@ const ItemDetailContainer = (props) => {
     getItem();
   }, []);
 
-  const listado = productos.map((item) => <p key={item.id}>{item.title}</p>);
+  const listado = productos.map((item) => (
+    <ItemDetail
+      key={item.id}
+      title={item.title}
+      price={item.price}
+      thumbnail={item.thumbnail}
+    />
+  ));
 
   return (
     <div className="ItemDetailContainer">
