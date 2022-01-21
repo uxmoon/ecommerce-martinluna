@@ -1,8 +1,8 @@
-.ItemDetailsContainer {
+.ItemDetailContainer {
   padding: 0 1rem;
 }
 
-.ItemDetailsContainer-container {
+.ItemDetailContainer-container {
   width: 100%;
   max-width: 80rem;
   margin: auto;
