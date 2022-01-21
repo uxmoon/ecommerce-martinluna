@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemDetailContainer.css";
 import ItemDetail from "./ItemDetail";
 
-const API_URL = "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=3";
+const API_URL = "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=1";
 
 const ItemDetailContainer = (props) => {
   const [productos, setProductos] = useState([]);
@@ -35,11 +35,7 @@ const ItemDetailContainer = (props) => {
 
   return (
     <div className="ItemDetailContainer">
-      <div className="ItemDetailContainer-container">
-        <h2>Item detail container</h2>
-        {listado}
-        <ItemDetail />
-      </div>
+      <div className="ItemDetailContainer-container">{listado}</div>
     </div>
   );
 };
