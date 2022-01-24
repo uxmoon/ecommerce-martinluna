@@ -9,19 +9,17 @@ const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
 
   const getItem = () => {
-    setTimeout(() => {
-      fetch(API_URL)
-        .then((response) => {
-          return response.json();
-        })
-        .then((response) => {
-          /**
-           * Busco el producto en la respuesta con el id MLA919662733 y actualizo el estado
-           * title: Smart Tv Tcl P-series 55p715 Dled 4k 55  100v/240v
-           */
-          setProducto(response.results.find(({ id }) => id === "MLA919662733"));
-        });
-    }, 2000);
+    fetch(API_URL)
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        /**
+         * Busco el producto en la respuesta con el id MLA919662733
+         * y configuro el estado con 1 producto
+         */
+        setProducto(response.results.find(({ id }) => id === "MLA919662733"));
+      });
   };
 
   useEffect(() => {
