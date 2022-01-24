@@ -5,8 +5,8 @@ import ItemDetail from "./ItemDetail";
 const API_URL =
   "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=10";
 
-const ItemDetailContainer = (props) => {
-  const [arrayDeProductos, setArrayDeProductos] = useState([]);
+const ItemDetailContainer = () => {
+  const [producto, setProducto] = useState({});
 
   const getItem = () => {
     setTimeout(() => {
@@ -16,9 +16,10 @@ const ItemDetailContainer = (props) => {
         })
         .then((response) => {
           /**
-           * Configuro el array de productos con 10 items
+           * Busco el producto en la respuesta con el id MLA919662733 y actualizo el estado
+           * title: Smart Tv Tcl P-series 55p715 Dled 4k 55  100v/240v
            */
-          setArrayDeProductos(response.results);
+          setProducto(response.results.find(({ id }) => id === "MLA919662733"));
         });
     }, 2000);
   };
@@ -27,18 +28,13 @@ const ItemDetailContainer = (props) => {
     getItem();
   }, []);
 
-  /**
-   * Busco el producto: Smart Tv Tcl P-series 55p715 Dled 4k 55  100v/240v
-   */
-  const producto = arrayDeProductos.find(({ id }) => id === "MLA919662733");
-
   return (
     <div className="ItemDetailContainer">
       <div className="ItemDetailContainer-container">
         <ItemDetail
           key={producto.id}
-          price={producto.price}
           title={producto.title}
+          price={producto.price}
           thumbnail={producto.thumbnail}
         />
       </div>
