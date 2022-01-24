@@ -1,8 +1,7 @@
 import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import { ItemCount } from "./components/ItemCount";
 import Home from "./components/Home";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -14,11 +13,17 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/products">
+          <Products />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
       </Switch>
     </BrowserRouter>
     // <div className="App">
     //   <header>
-    //     <h1>eCommerce</h1>
+    //
     //     <NavBar />
     //     <ItemListContainer />
     //     <ItemDetailContainer />
