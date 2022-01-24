@@ -10,7 +10,7 @@ function App() {
       <header>
         <h1>eCommerce</h1>
         <NavBar />
-        <ItemListContainer greeting="Martin" />
+        <ItemListContainer />
         <ItemDetailContainer />
         <ItemCount stock={100} initial={1} />
       </header>
