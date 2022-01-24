@@ -21,15 +21,6 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
-    // <div className="App">
-    //   <header>
-    //
-    //     <NavBar />
-    //     <ItemListContainer />
-    //     <ItemDetailContainer />
-    //     <ItemCount stock={100} initial={1} />
-    //   </header>
-    // </div>
   );
 }
 
