@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./ItemDetailContainer.css";
 import ItemDetail from "./ItemDetail";
 
-const API_URL = "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=1";
+const API_URL =
+  "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=10";
 
 const ItemDetailContainer = (props) => {
-  const [productos, setProductos] = useState([]);
+  const [arrayDeProductos, setArrayDeProductos] = useState([]);
 
   const getItem = () => {
     setTimeout(() => {
@@ -14,8 +15,10 @@ const ItemDetailContainer = (props) => {
           return response.json();
         })
         .then((response) => {
-          console.log(response.results);
-          setProductos(response.results);
+          /**
+           * Configuro el array de productos con 10 items
+           */
+          setArrayDeProductos(response.results);
         });
     }, 2000);
   };
@@ -24,18 +27,21 @@ const ItemDetailContainer = (props) => {
     getItem();
   }, []);
 
-  const listado = productos.map((item) => (
-    <ItemDetail
-      key={item.id}
-      title={item.title}
-      price={item.price}
-      thumbnail={item.thumbnail}
-    />
-  ));
+  /**
+   * Busco el producto: Smart Tv Tcl P-series 55p715 Dled 4k 55  100v/240v
+   */
+  const producto = arrayDeProductos.find(({ id }) => id === "MLA919662733");
 
   return (
     <div className="ItemDetailContainer">
-      <div className="ItemDetailContainer-container">{listado}</div>
+      <div className="ItemDetailContainer-container">
+        <ItemDetail
+          key={producto.id}
+          price={producto.price}
+          title={producto.title}
+          thumbnail={producto.thumbnail}
+        />
+      </div>
     </div>
   );
 };
