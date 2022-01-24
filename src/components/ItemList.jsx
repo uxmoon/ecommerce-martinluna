@@ -8,14 +8,14 @@ function ItemList() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [message, setMessage] = useState(false);
 
-  useEffect(() => {
-    const promesaProductos = new Promise((response, reject) => {
-      setTimeout(() => {
-        response(data);
-        // reject("Se produjo un error");
-      }, 2000);
-    });
+  const promesaProductos = new Promise((response, reject) => {
+    setTimeout(() => {
+      response(data);
+      // reject("Se produjo un error");
+    }, 2000);
+  });
 
+  useEffect(() => {
     promesaProductos
       .then((res) => {
         setProductos(res);
@@ -27,15 +27,15 @@ function ItemList() {
       });
   });
 
+  const listadoProductos = productos.map((producto) => (
+    <Item key={producto.id} producto={producto} />
+  ));
+
   return (
     <div>
       <p>Listado de productos</p>
       {isLoaded ? (
-        <div className="ItemList">
-          {productos.map((producto) => (
-            <Item key={producto.id} producto={producto} />
-          ))}
-        </div>
+        <div className="ItemList">{listadoProductos}</div>
       ) : (
         <div className="loader">
           <p>Cargando productos...</p>
