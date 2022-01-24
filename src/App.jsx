@@ -1,9 +1,8 @@
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "./App.css";
 
 function App() {
   return (
