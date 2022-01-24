@@ -1,4 +1,4 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import "./NavBar.css";
 
@@ -9,13 +9,13 @@ function NavBar() {
         <nav>
           <ul>
             <li>
-              <a href="#">Inicio</a>
+              <NavLink to="/">Inicio</NavLink>
             </li>
             <li>
-              <a href="#">Productos</a>
+              <NavLink to="/products">Productos</NavLink>
             </li>
             <li>
-              <a href="#">Contacto</a>
+              <NavLink to="/cart">Carrito</NavLink>
             </li>
           </ul>
         </nav>
