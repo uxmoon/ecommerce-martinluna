@@ -1,4 +1,4 @@
-import { ReactComponent as IconCart } from "../cart.svg";
+import { ReactComponent as IconCart } from "../images/cart.svg";
 import "./CartWidget.css";
 
 const CartWidget = () => (
