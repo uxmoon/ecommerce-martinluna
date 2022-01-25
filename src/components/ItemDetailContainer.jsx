@@ -4,12 +4,18 @@ import "./ItemDetailContainer.css";
 import ItemDetail from "./ItemDetail";
 import { data } from "../products";
 
-// const API_URL =
-//   "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=10";
+/**
+ * Dejo de utilizar la API externa
+ */
+// const API_URL = "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=10";
 
 const ItemDetailContainer = (props) => {
   const { id } = useParams();
   const [producto, setProducto] = useState({});
+
+  /**
+   * Comento el codigo anterior de la entrega anterior para utilizar mis productos mock
+   */
 
   // const getItem = () => {
   //   fetch(API_URL)
@@ -35,10 +41,11 @@ const ItemDetailContainer = (props) => {
   useEffect(() => {
     promesaProducto
       .then((res) => {
+        /**
+         * Resuelvo la promesa y configuro el producto utilizando el id de useParams y el id del producto
+         */
         console.log(res);
         // setProducto(res.find((item) => item.id === id));
-        // let resultado = res.find((element) => element === 1);
-        // console.log(resultado);
       })
       .catch((err) => {
         console.log(err);
