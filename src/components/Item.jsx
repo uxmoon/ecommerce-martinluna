@@ -1,17 +1,16 @@
+import { Link } from "react-router-dom";
 import "./Item.css";
 
 function Item({ producto }) {
-  const { title, price, description } = producto;
+  const { id, pictureUrl, title, price } = producto;
+
   return (
     <div className="Item">
-      <img src={producto.pictureUrl} alt={title} />
-      <h2>{title}</h2>
-      <h3>{price}</h3>
-      <ul>
-        {description.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
+      <Link to={`/item/${id}`}>
+        <img src={pictureUrl} alt={title} />
+        <h2>{title}</h2>
+      </Link>
+      <p>{price}</p>
     </div>
   );
 }
