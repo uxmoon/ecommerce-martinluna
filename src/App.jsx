@@ -1,8 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   return (
@@ -10,13 +9,13 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <ItemListContainer />
         </Route>
-        <Route exact path="/products">
-          <Products />
+        <Route path="/category/:categoryId">
+          <ItemListContainer />
         </Route>
-        <Route exact path="/cart">
-          <Cart />
+        <Route path="/item/:id">
+          <ItemDetailContainer />
         </Route>
       </Switch>
     </BrowserRouter>
