@@ -6,16 +6,19 @@ function NavBar() {
   return (
     <div className="NavBar">
       <div className="NavBar-container">
+        <p>
+          <NavLink to="/">Logo</NavLink>
+        </p>
         <nav>
           <ul>
             <li>
-              <NavLink to="/">Inicio</NavLink>
+              <NavLink to="/category/audio">Audio</NavLink>
             </li>
             <li>
-              <NavLink to="/products">Productos</NavLink>
+              <NavLink to="/category/computacion">Computación</NavLink>
             </li>
             <li>
-              <NavLink to="/cart">Carrito</NavLink>
+              <NavLink to="/category/televisores">Televisores</NavLink>
             </li>
           </ul>
         </nav>
