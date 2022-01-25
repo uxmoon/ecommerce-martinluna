@@ -1,4 +1,5 @@
 import "./ItemDetail.css";
+import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ title, price, thumbnail }) {
   return (
@@ -15,6 +16,7 @@ export default function ItemDetail({ title, price, thumbnail }) {
           ))}
         </ul> */}
       </div>
+      <ItemCount stock={10} initial={1} />
     </div>
   );
 }

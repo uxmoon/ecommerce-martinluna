@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-export const ItemCount = ({ stock, initial }) => {
+function ItemCount({ stock, initial }) {
   // Inicio estado con un producto seleccionado por defecto
   const [contador, setContador] = useState(initial);
 
@@ -48,4 +48,6 @@ export const ItemCount = ({ stock, initial }) => {
       </button>
     </div>
   );
-};
+}
+
+export default ItemCount;
