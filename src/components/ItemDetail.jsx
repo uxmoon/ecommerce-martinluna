@@ -9,6 +9,11 @@ export default function ItemDetail({ title, price, thumbnail }) {
       <div className="ItemDetail-content">
         <h2 className="ItemDetail-title">{title}</h2>
         <p className="ItemDetail-price">$ {price}</p>
+        {/* <ul>
+          {description.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul> */}
       </div>
     </div>
   );

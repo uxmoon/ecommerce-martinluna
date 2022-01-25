@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.css";
-// import ItemDetail from "./ItemDetail";
-// import { data } from "../products";
+import ItemDetail from "./ItemDetail";
+import { data } from "../products";
 
 // const API_URL =
 //   "https://api.mercadolibre.com/sites/MLA/search?q=TV 4k&limit=10";
 
 const ItemDetailContainer = (props) => {
-  console.log(props);
-  // const [producto, setProducto] = useState({});
+  const { id } = useParams();
+  const [producto, setProducto] = useState({});
 
   // const getItem = () => {
   //   fetch(API_URL)
@@ -24,28 +25,36 @@ const ItemDetailContainer = (props) => {
   //     });
   // };
 
-  // const promesaProducto = new Promise((response, reject) => {
-  //   setTimeout(() => {
-  //     response(data);
-  //     // reject("Se produjo un error");
-  //   }, 2000);
-  // });
+  const promesaProducto = new Promise((response, reject) => {
+    setTimeout(() => {
+      response(data);
+      // reject("Se produjo un error");
+    }, 2000);
+  });
 
-  // useEffect(() => {
-  //   promesaProducto().then((res) =>
-  //     setProducto(res.find(({ id }) => id === producto.id))
-  //   );
-  // }, []);
+  useEffect(() => {
+    promesaProducto
+      .then((res) => {
+        console.log(res);
+        // setProducto(res.find((item) => item.id === id));
+        // let resultado = res.find((element) => element === 1);
+        // console.log(resultado);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
   return (
     <div className="ItemDetailContainer">
       <div className="ItemDetailContainer-container">
-        {/* <ItemDetail
+        <ItemDetail
           key={producto.id}
+          thumbnail={producto.thumbnail}
           title={producto.title}
           price={producto.price}
-          thumbnail={producto.thumbnail}
-        /> */}
+          // description={producto.description}
+        />
       </div>
     </div>
   );
