@@ -1,7 +1,7 @@
 import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 
-export default function ItemDetail({ title, price, thumbnail }) {
+export default function ItemDetail({ title, price, thumbnail, description }) {
   return (
     <div className="ItemDetail">
       <div className="ItemDetail-thumbnail">
@@ -9,12 +9,12 @@ export default function ItemDetail({ title, price, thumbnail }) {
       </div>
       <div className="ItemDetail-content">
         <h2 className="ItemDetail-title">{title}</h2>
-        <p className="ItemDetail-price">$ {price}</p>
-        {/* <ul>
+        <p className="ItemDetail-price">{price}</p>
+        <ul>
           {description.map((item) => (
-            <li>{item}</li>
+            <li key={item}>{item}</li>
           ))}
-        </ul> */}
+        </ul>
       </div>
       <ItemCount stock={10} initial={1} />
     </div>
