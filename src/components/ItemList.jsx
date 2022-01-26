@@ -8,30 +8,33 @@ function ItemList() {
   const { categoryId } = useParams();
 
   const [productos, setProductos] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(false);
 
   const promesaProductos = new Promise((response, reject) => {
     setTimeout(() => {
       response(data);
-      // reject("Se produjo un error");
     }, 2000);
   });
 
   useEffect(() => {
+    setIsLoading(true);
+
     promesaProductos
       .then((res) => {
-        setProductos(res);
-        setIsLoaded(true);
+        if (categoryId) {
+          setProductos(data.filter((item) => item.categoryId === categoryId));
+        } else {
+          setProductos(res);
+        }
       })
       .catch((err) => {
         console.log(err);
         setMessage(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-  }, []);
-
-  useEffect(() => {
-    setProductos(data.filter((item) => item.categoryId === categoryId));
   }, [categoryId]);
 
   const listadoProductos = productos.map((producto) => (
@@ -41,12 +44,12 @@ function ItemList() {
   return (
     <div>
       <h1>Productos</h1>
-      {isLoaded ? (
-        <div className="ItemList">{listadoProductos}</div>
-      ) : (
+      {isLoading ? (
         <div className="loader">
           <p>Cargando productos...</p>
         </div>
+      ) : (
+        <div className="ItemList">{listadoProductos}</div>
       )}
       {message && (
         <div className="message alert">
