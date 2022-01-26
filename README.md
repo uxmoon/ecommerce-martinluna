@@ -2,8 +2,6 @@
 
 eCommerce realizado con ReactJs para curso de Coderhouse.
 
-## Estructura
-
 ### Productos
 
 El mock de productos se encuentra en el root `/products.jsx` donde se detallan los id y categoryId.
@@ -25,5 +23,18 @@ Cada producto tiene los siguientes detalles:
 
 `Navbar.jsx`
 
-- Accedo a la home /
-- Agrego NavLink para cada categoria
+- Accedo a la home desde el logo
+- Accedo a cada categori utilizando NavLink
+
+`ItemList.jsx`
+
+- Se configura una promesa para actualizar el estado de productos. Si se recibe el `categoryId` se filtran los productos.
+
+`ItemDetailContainer.jsx`
+
+- Se configura una promesa para actualizar el estado de un producto. Al resolver la misma se actualiza el estado del producto para mostrar solamente uno.
+
+`ItemDetail.jsx`
+
+- Se muestran todos los detalles del producto incluida la lista de items.
+- Se agrega el component `ItemCount` dentro del mismo.
