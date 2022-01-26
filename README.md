@@ -2,6 +2,8 @@
 
 eCommerce realizado con ReactJs para curso de Coderhouse.
 
+![image](https://i.imgur.com/s06SH2Y.gif)
+
 ### Productos
 
 El mock de productos se encuentra en el root `/products.jsx` donde se detallan los id y categoryId.
