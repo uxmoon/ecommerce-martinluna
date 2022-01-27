@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-function ItemCount({ stock, initial }) {
-  // Inicio estado con un producto seleccionado por defecto
+function ItemCount({ stock, initial, onAdd, onSubtract }) {
   const [contador, setContador] = useState(initial);
 
-  // Configuro el stock disponible
-  // const stockDisponible = 10;
-
-  // Funciones para actualizar el estado
-  const onAdd = () => {
-    // No debe superar el stock disponible
-    if (contador < stock) {
+  const add = () => {
+    /**
+     * Resto hasta que no haya stock disponible
+     * Agrego 1 al contador interno
+     */
+    if (stock > 0) {
       setContador((contador) => contador + 1);
+      onAdd(1);
     }
   };
-  const onSubtract = () => {
-    // No debe ser menor a 1 producto
+
+  const subtract = () => {
+    /**
+     * Sumo 1 al stock disponible
+     * Resto 1 al contador interno
+     */
     if (contador > 1) {
       setContador((contador) => contador - 1);
+      onSubtract(1);
     }
   };
 
@@ -34,11 +38,11 @@ function ItemCount({ stock, initial }) {
 
       <div className="ItemCount-actions">
         {/* Botones para agrega o quitar productos */}
-        <button className="ItemCount-button" onClick={onSubtract}>
+        <button className="ItemCount-button" onClick={subtract}>
           -
         </button>
         <div className="ItemCount-number">{contador}</div>
-        <button className="ItemCount-button" onClick={onAdd}>
+        <button className="ItemCount-button" onClick={add}>
           +
         </button>
       </div>

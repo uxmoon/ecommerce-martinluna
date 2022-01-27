@@ -1,7 +1,19 @@
+import React, { useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ title, price, thumbnail, description }) {
+  const [stock, setStock] = useState(10);
+
+  const onAdd = (quantityToAdd) => {
+    console.log(stock - quantityToAdd);
+    setStock((stock) => stock - quantityToAdd);
+  };
+
+  const onSubtract = (quantityToSubtract) => {
+    console.log(stock + quantityToSubtract);
+    setStock((stock) => stock + quantityToSubtract);
+  };
   return (
     <div className="ItemDetail">
       <div className="ItemDetail-thumbnail">
@@ -16,7 +28,12 @@ export default function ItemDetail({ title, price, thumbnail, description }) {
           ))}
         </ul>
       </div>
-      <ItemCount stock={10} initial={1} />
+      <ItemCount
+        stock={stock}
+        initial={1}
+        onAdd={onAdd}
+        onSubtract={onSubtract}
+      />
     </div>
   );
 }
