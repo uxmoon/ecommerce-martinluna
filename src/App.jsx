@@ -17,6 +17,9 @@ function App() {
         <Route path="/item/:id">
           <ItemDetailContainer />
         </Route>
+        <Route path="/cart">
+          <h1>Carro de compras</h1>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
