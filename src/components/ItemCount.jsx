@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
 
-function ItemCount({ stock, onAdd, onSubtract }) {
+function ItemCount({ stock, onAdd, onSubtract, onAddToCart }) {
   const [contador, setContador] = useState(0);
+  const [disableButton, setDisableButton] = useState(true);
 
   const add = () => {
     /**
@@ -26,10 +27,13 @@ function ItemCount({ stock, onAdd, onSubtract }) {
     }
   };
 
-  /* Muestro un mensaje con la cantidad de productos */
-  const agregarProducto = () => {
-    alert(`Se agregaron ${contador} productos al carrito`);
-  };
+  useEffect(() => {
+    if (contador > 0) {
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+  }, [contador]);
 
   return (
     <div className="ItemCount">
@@ -47,7 +51,11 @@ function ItemCount({ stock, onAdd, onSubtract }) {
         </button>
       </div>
 
-      <button onClick={agregarProducto} className="Button">
+      <button
+        onClick={() => onAddToCart()}
+        className="Button"
+        disabled={disableButton}
+      >
         Agregar al carrito
       </button>
     </div>
