@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-function ItemCount({ stock, initial, onAdd, onSubtract }) {
-  const [contador, setContador] = useState(initial);
+function ItemCount({ stock, onAdd, onSubtract }) {
+  const [contador, setContador] = useState(0);
 
   const add = () => {
     /**
@@ -20,7 +20,7 @@ function ItemCount({ stock, initial, onAdd, onSubtract }) {
      * Sumo 1 al stock disponible
      * Resto 1 al contador interno
      */
-    if (contador > 1) {
+    if (contador > 0) {
       setContador((contador) => contador - 1);
       onSubtract(1);
     }

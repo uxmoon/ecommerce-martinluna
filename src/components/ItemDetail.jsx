@@ -14,6 +14,7 @@ export default function ItemDetail({ title, price, thumbnail, description }) {
     console.log(stock + quantityToSubtract);
     setStock((stock) => stock + quantityToSubtract);
   };
+
   return (
     <div className="ItemDetail">
       <div className="ItemDetail-thumbnail">
@@ -28,12 +29,7 @@ export default function ItemDetail({ title, price, thumbnail, description }) {
           ))}
         </ul>
       </div>
-      <ItemCount
-        stock={stock}
-        initial={1}
-        onAdd={onAdd}
-        onSubtract={onSubtract}
-      />
+      <ItemCount stock={stock} onAdd={onAdd} onSubtract={onSubtract} />
     </div>
   );
 }
