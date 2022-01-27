@@ -1,18 +1,22 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ title, price, thumbnail, description }) {
   const [stock, setStock] = useState(10);
+  const [addToCart, setAddToCart] = useState(false);
 
   const onAdd = (quantityToAdd) => {
-    console.log(stock - quantityToAdd);
     setStock((stock) => stock - quantityToAdd);
   };
 
   const onSubtract = (quantityToSubtract) => {
-    console.log(stock + quantityToSubtract);
     setStock((stock) => stock + quantityToSubtract);
+  };
+
+  const onAddToCart = () => {
+    setAddToCart(true);
   };
 
   return (
@@ -29,7 +33,20 @@ export default function ItemDetail({ title, price, thumbnail, description }) {
           ))}
         </ul>
       </div>
-      <ItemCount stock={stock} onAdd={onAdd} onSubtract={onSubtract} />
+      {addToCart ? (
+        <div>
+          <Link to="/cart" className="Button">
+            Ir al carro
+          </Link>
+        </div>
+      ) : (
+        <ItemCount
+          stock={stock}
+          onAdd={onAdd}
+          onSubtract={onSubtract}
+          onAddToCart={onAddToCart}
+        />
+      )}
     </div>
   );
 }
