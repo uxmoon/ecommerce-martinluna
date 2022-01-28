@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CartContext from "./components/CartContext";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <ItemDetailContainer />
           </Route>
           <Route path="/cart">
-            <h1>Carro de compras</h1>
+            <Cart />
           </Route>
         </Switch>
       </BrowserRouter>

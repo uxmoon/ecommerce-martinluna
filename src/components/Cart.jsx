@@ -1,9 +1,8 @@
-import React from "react";
-
 export default function Cart() {
   return (
     <div>
-      <h1>Carrito de compras</h1>
+      <h1>Carro de compras</h1>
+      <p>No hay productos en el carro.</p>
     </div>
   );
 }
