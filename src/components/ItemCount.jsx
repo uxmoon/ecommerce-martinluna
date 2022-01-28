@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./ItemCount.css";
+import { contexto } from "./CartContext";
 
 function ItemCount({ stock, onAdd, onSubtract, onAddToCart }) {
+  const { alertaCarro } = useContext(contexto);
   const [contador, setContador] = useState(0);
   const [disableButton, setDisableButton] = useState(true);
 
@@ -52,7 +54,8 @@ function ItemCount({ stock, onAdd, onSubtract, onAddToCart }) {
       </div>
 
       <button
-        onClick={() => onAddToCart()}
+        // onClick={() => onAddToCart()}
+        onClick={() => alertaCarro()}
         className="Button"
         disabled={disableButton}
       >
