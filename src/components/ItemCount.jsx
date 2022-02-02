@@ -1,20 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./ItemCount.css";
-import { contexto } from "./CartContext";
 
-function ItemCount({ stock, onAdd, onSubtract, onAddToCart }) {
-  const { alertaCarro } = useContext(contexto);
-  const [contador, setContador] = useState(0);
-  const [disableButton, setDisableButton] = useState(true);
+function ItemCount({ stock, initial, onAdd }) {
+  const [contador, setContador] = useState(initial);
+  // const [disableButton, setDisableButton] = useState(true);
 
   const add = () => {
     /**
      * Resto hasta que no haya stock disponible
      * Agrego 1 al contador interno
      */
-    if (stock > 0) {
-      setContador((contador) => contador + 1);
-      onAdd(1);
+    // if (stock > 0) {
+    //   setContador((contador) => contador + 1);
+    //   onAdd(1);
+    // }
+    if (contador < stock) {
+      setContador(contador + 1);
     }
   };
 
@@ -23,19 +24,22 @@ function ItemCount({ stock, onAdd, onSubtract, onAddToCart }) {
      * Sumo 1 al stock disponible
      * Resto 1 al contador interno
      */
-    if (contador > 0) {
-      setContador((contador) => contador - 1);
-      onSubtract(1);
+    // if (contador > 0) {
+    //   setContador((contador) => contador - 1);
+    //   onSubtract(1);
+    // }
+    if (contador > initial) {
+      setContador(contador - 1);
     }
   };
 
-  useEffect(() => {
-    if (contador > 0) {
-      setDisableButton(false);
-    } else {
-      setDisableButton(true);
-    }
-  }, [contador]);
+  // useEffect(() => {
+  //   if (contador > 0) {
+  //     setDisableButton(false);
+  //   } else {
+  //     setDisableButton(true);
+  //   }
+  // }, [contador]);
 
   return (
     <div className="ItemCount">
@@ -54,10 +58,9 @@ function ItemCount({ stock, onAdd, onSubtract, onAddToCart }) {
       </div>
 
       <button
-        // onClick={() => onAddToCart()}
-        onClick={() => alertaCarro()}
+        onClick={() => onAdd(contador)}
         className="Button"
-        disabled={disableButton}
+        // disabled={disableButton}
       >
         Agregar al carrito
       </button>
