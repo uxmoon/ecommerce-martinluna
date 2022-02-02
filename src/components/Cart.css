@@ -1,0 +1,9 @@
+.Cart {
+  padding: 0 1rem;
+}
+
+.Cart-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: auto;
+}
