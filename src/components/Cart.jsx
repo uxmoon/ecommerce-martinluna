@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { cartContext } from "../context/CartProvider";
 
 export default function Cart() {
-  const { cart } = useContext(cartContext);
+  const { cart, removeItem } = useContext(cartContext);
   console.log(cart);
   return (
     <div>
@@ -12,6 +12,7 @@ export default function Cart() {
         <div key={product.item.id}>
           <p>{product.item.title}</p>
           <p>cantidad: {product.quantity}</p>
+          <button onClick={() => removeItem(product.item.id)}>Quitar</button>
         </div>
       ))}
     </div>

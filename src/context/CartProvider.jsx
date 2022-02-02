@@ -20,9 +20,14 @@ export default function CartProvider({ children }) {
     return cart.some((el) => el.item.id === itemId);
   };
 
+  const removeItem = (itemId) => {
+    const filteredItem = cart.filter((el) => el.item.id !== itemId);
+    setCart(filteredItem);
+  };
+
   return (
     <>
-      <cartContext.Provider value={{ cart, addItem }}>
+      <cartContext.Provider value={{ cart, addItem, removeItem }}>
         {children}
       </cartContext.Provider>
     </>
