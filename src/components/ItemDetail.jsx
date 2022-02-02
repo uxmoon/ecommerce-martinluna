@@ -19,9 +19,11 @@ export default function ItemDetail({ producto, onAdd, addedToCart }) {
         </ul> */}
       </div>
       {addedToCart ? (
-        <Link to="/cart" className="Button">
-          Ir al carro
-        </Link>
+        <div>
+          <Link to="/cart" className="Button">
+            Ir al carro
+          </Link>
+        </div>
       ) : (
         <ItemCount stock={5} initial={1} onAdd={onAdd} />
       )}
