@@ -3,49 +3,27 @@ import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 
-export default function ItemDetail({ title, price, thumbnail, description }) {
-  const [stock, setStock] = useState(10);
-  const [addToCart, setAddToCart] = useState(false);
-
-  const onAdd = (quantityToAdd) => {
-    setStock((stock) => stock - quantityToAdd);
-  };
-
-  const onSubtract = (quantityToSubtract) => {
-    setStock((stock) => stock + quantityToSubtract);
-  };
-
-  const onAddToCart = () => {
-    setAddToCart(true);
-  };
-
+export default function ItemDetail({ producto, onAdd, addedToCart }) {
   return (
     <div className="ItemDetail">
       <div className="ItemDetail-thumbnail">
-        <img src={thumbnail} alt={title} />
+        <img src={producto.pictureUrl} alt={producto.title} />
       </div>
       <div className="ItemDetail-content">
-        <h2 className="ItemDetail-title">{title}</h2>
-        <p className="ItemDetail-price">{price}</p>
-        <ul>
-          {description.map((item) => (
+        <h2 className="ItemDetail-title">{producto.title}</h2>
+        <p className="ItemDetail-price">{producto.price}</p>
+        {/* <ul>
+          {producto.description.map((item) => (
             <li key={item}>{item}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
-      {addToCart ? (
-        <div>
-          <Link to="/cart" className="Button">
-            Ir al carro
-          </Link>
-        </div>
+      {addedToCart ? (
+        <Link to="/cart" className="Button">
+          Ir al carro
+        </Link>
       ) : (
-        <ItemCount
-          stock={stock}
-          onAdd={onAdd}
-          onSubtract={onSubtract}
-          onAddToCart={onAddToCart}
-        />
+        <ItemCount stock={5} initial={1} onAdd={onAdd} />
       )}
     </div>
   );
