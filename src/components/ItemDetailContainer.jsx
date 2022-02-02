@@ -35,6 +35,7 @@ const ItemDetailContainer = () => {
 
   const onAddToCart = (contador) => {
     console.log(`Producto: ${producto.title}, Cantidad: ${contador}`);
+    addItem(producto, contador);
     setAddedToCart(true);
   };
 
