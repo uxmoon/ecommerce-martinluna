@@ -33,8 +33,8 @@ const ItemDetailContainer = () => {
       });
   }, []);
 
-  const onAddToCart = (quantity) => {
-    console.log(`Producto: ${producto.title}, Cantidad: ${quantity}`);
+  const onAddToCart = (contador) => {
+    console.log(`Producto: ${producto.title}, Cantidad: ${contador}`);
     setAddedToCart(true);
   };
 
