@@ -1,10 +1,11 @@
 import { ReactComponent as IconCart } from "../images/cart.svg";
+import { Link } from "react-router-dom";
 import "./CartWidget.css";
 
 const CartWidget = () => (
-  <div className="CartWidget">
-    <IconCart /> 4
-  </div>
+  <Link to="/cart" className="CartWidget">
+    <IconCart /> #
+  </Link>
 );
 
 export default CartWidget;
