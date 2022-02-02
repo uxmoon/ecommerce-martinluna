@@ -7,7 +7,7 @@ function NavBar() {
     <div className="NavBar">
       <div className="NavBar-container">
         <p>
-          <NavLink to="/">Logo</NavLink>
+          <NavLink to="/">Mi Tienda</NavLink>
         </p>
         <nav>
           <ul>

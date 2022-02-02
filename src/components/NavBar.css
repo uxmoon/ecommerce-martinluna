@@ -15,6 +15,16 @@
 .NavBar a {
   color: #fff;
   text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.NavBar a:hover {
+  background-color: #fff;
+  color: #333;
 }
 
 .NavBar ul {
@@ -27,4 +37,8 @@
 
 .NavBar li:not(:last-child) {
   margin-right: 1rem;
+}
+
+.NavBar p {
+  font-weight: 700;
 }
