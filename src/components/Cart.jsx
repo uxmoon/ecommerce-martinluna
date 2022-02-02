@@ -7,7 +7,7 @@ export default function Cart() {
   return (
     <div>
       <h1>Carro de compras</h1>
-      <p>No hay productos en el carro.</p>
+      {cart.length === 0 && <p>No hay productos en el carro.</p>}
       {cart.map((product) => (
         <div key={product.item.id}>
           <p>{product.item.title}</p>
