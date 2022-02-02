@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import "./ItemDetailContainer.css";
 import ItemDetail from "./ItemDetail";
 import { data } from "../products";
+import { cartContext } from "../context/CartProvider";
+import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
-  const [isLoading, setIsLoading] = useState(true);
+  const { addItem } = useContext(cartContext);
+  const { itemId } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
   const [producto, setProducto] = useState({});
+  const [addedToCart, setAddedToCart] = useState(false);
 
   const promesaProducto = new Promise((response, reject) => {
     setTimeout(() => {
@@ -16,9 +19,11 @@ const ItemDetailContainer = () => {
   });
 
   useEffect(() => {
+    setIsLoading(true);
+
     promesaProducto
       .then((res) => {
-        setProducto(res.find((item) => item.id === parseInt(id)));
+        setProducto(res.find((item) => item.id === parseInt(itemId)));
       })
       .catch((err) => {
         console.log(err);
@@ -27,6 +32,11 @@ const ItemDetailContainer = () => {
         setIsLoading(false);
       });
   }, []);
+
+  const onAddToCart = (quantity) => {
+    console.log(`Producto: ${producto.title}, Cantidad: ${quantity}`);
+    setAddedToCart(true);
+  };
 
   return (
     <div className="ItemDetailContainer">
@@ -37,11 +47,9 @@ const ItemDetailContainer = () => {
           </div>
         ) : (
           <ItemDetail
-            key={producto.id}
-            thumbnail={producto.pictureUrl}
-            title={producto.title}
-            price={producto.price}
-            description={producto.description}
+            onAdd={onAddToCart}
+            producto={producto}
+            addedToCart={addedToCart}
           />
         )}
       </div>
