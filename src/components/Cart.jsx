@@ -8,6 +8,12 @@ export default function Cart() {
     <div>
       <h1>Carro de compras</h1>
       <p>No hay productos en el carro.</p>
+      {cart.map((product) => (
+        <div key={product.item.id}>
+          <p>{product.item.title}</p>
+          <p>cantidad: {product.quantity}</p>
+        </div>
+      ))}
     </div>
   );
 }
