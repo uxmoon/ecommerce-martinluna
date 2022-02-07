@@ -4,7 +4,13 @@ import "./Cart.css";
 
 export default function Cart() {
   const { cart, removeItem, clear } = useContext(cartContext);
-  console.log(cart);
+
+  const totalPrice = cart.reduce((total, item) => {
+    console.log(item.item.price);
+    console.log(item.quantity);
+    return total + item.item.price * item.quantity;
+  }, 0);
+
   return (
     <div className="Cart">
       <div className="Cart-container">
@@ -18,8 +24,9 @@ export default function Cart() {
         )}
         {cart.map((product) => (
           <div key={product.item.id}>
-            <p>{product.item.title}</p>
-            <p>cantidad: {product.quantity}</p>
+            <h3>{product.item.title}</h3>
+            <p>$ {product.item.price}</p>
+            <p>Unidades: {product.quantity}</p>
             <button
               className="Button Button--secondary"
               onClick={() => removeItem(product.item.id)}
@@ -28,6 +35,7 @@ export default function Cart() {
             </button>
           </div>
         ))}
+        <p>Total: $ {totalPrice}</p>
       </div>
     </div>
   );
