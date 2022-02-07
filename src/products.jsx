@@ -8,7 +8,7 @@ export const data = [
       "Tecnología HDR para una calidad de imagen mejorada.",
       "Modo de sonido: Dolby Atmos, AI Sound.",
     ],
-    price: "$ 69.999",
+    price: 69999,
     pictureUrl:
       "https://http2.mlstatic.com/D_NQ_NP_826710-MLA42164194325_062020-O.webp",
   },
@@ -21,7 +21,7 @@ export const data = [
       "Tecnología HDR para una calidad de imagen mejorada.",
       "Modo de sonido: Dolby Digital Plus, Q-Symphony.",
     ],
-    price: "$ 72.999",
+    price: 72999,
     pictureUrl:
       "https://http2.mlstatic.com/D_NQ_NP_787221-MLA48007684849_102021-O.webp",
   },
@@ -34,7 +34,7 @@ export const data = [
       "Tecnología HDR para una calidad de imagen mejorada.",
       "Modo de sonido: Dolby Audio.",
     ],
-    price: "$ 79.999",
+    price: 79999,
     pictureUrl:
       "https://http2.mlstatic.com/D_NQ_NP_711131-MLA46112698238_052021-O.webp",
   },
@@ -47,7 +47,7 @@ export const data = [
       "Apto para uso en exteriores.",
       "Es a prueba de agua.",
     ],
-    price: "$ 37.062",
+    price: 37062,
     pictureUrl:
       "https://http2.mlstatic.com/D_NQ_NP_859974-MLA48707625843_122021-V.webp",
   },
@@ -60,7 +60,7 @@ export const data = [
       "Intel® Celeron® N4020 - 2 Núcleos de 1.10 GHz (up to 2.80 GHz)",
       "Memoria 4GB DDR4",
     ],
-    price: "$ 44.649",
+    price: 44649,
     pictureUrl:
       "https://http2.mlstatic.com/D_NQ_NP_857500-MLA47818436966_102021-V.webp",
   },
