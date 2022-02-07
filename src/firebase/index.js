@@ -15,5 +15,5 @@ export function getFirebase() {
 }
 
 export function getFirestore() {
-  return firebase.firestore.app();
+  return firebase.firestore(app);
 }
