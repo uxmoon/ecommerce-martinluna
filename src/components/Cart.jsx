@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartProvider";
 import { formatPrice } from "../helpers";
 import "./Cart.css";
@@ -15,7 +16,12 @@ export default function Cart() {
       <div className="Cart-container">
         <h1>Carro de compras</h1>
         {cart.length === 0 ? (
-          <p>No hay productos en el carro.</p>
+          <>
+            <p>No hay productos en el carro.</p>
+            <Link to="/" className="Button Button--secondary">
+              Ver productos disponibles
+            </Link>
+          </>
         ) : (
           <button className="Button Button--secondary" onClick={() => clear()}>
             Quitar todos
