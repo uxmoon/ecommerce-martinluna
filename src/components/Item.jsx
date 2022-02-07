@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { formatPrice } from "../helpers";
 import "./Item.css";
 
 function Item({ producto }) {
@@ -10,7 +11,7 @@ function Item({ producto }) {
         <img src={pictureUrl} alt={title} />
         <h2>{title}</h2>
       </Link>
-      <p>{price}</p>
+      <p>$ {formatPrice(price)}</p>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { cartContext } from "../context/CartProvider";
+import { formatPrice } from "../helpers";
 import "./Cart.css";
 
 export default function Cart() {
@@ -23,7 +24,7 @@ export default function Cart() {
         {cart.map((product) => (
           <div key={product.item.id}>
             <h3>{product.item.title}</h3>
-            <p>$ {product.item.price}</p>
+            <p>$ {formatPrice(product.item.price)}</p>
             <p>Unidades: {product.quantity}</p>
             <button
               className="Button Button--secondary"
@@ -33,7 +34,7 @@ export default function Cart() {
             </button>
           </div>
         ))}
-        {totalPrice > 0 && <p>Total: $ {totalPrice}</p>}
+        {totalPrice > 0 && <p>Total: $ {formatPrice(totalPrice)}</p>}
       </div>
     </div>
   );
