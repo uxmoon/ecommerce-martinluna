@@ -1,5 +1,6 @@
 .ItemDetail {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background-color: #fff;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -7,7 +8,7 @@
 }
 
 .ItemDetail-thumbnail {
-  margin-right: 1rem;
+  margin-inline: auto;
 }
 
 .ItemDetail-title {

@@ -5,6 +5,10 @@
   margin-inline: auto;
 }
 
+.ItemCount--added {
+  text-align: center;
+}
+
 .ItemCount-actions {
   display: flex;
   justify-content: space-between;
