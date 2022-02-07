@@ -6,8 +6,6 @@ export default function Cart() {
   const { cart, removeItem, clear } = useContext(cartContext);
 
   const totalPrice = cart.reduce((total, item) => {
-    console.log(item.item.price);
-    console.log(item.quantity);
     return total + item.item.price * item.quantity;
   }, 0);
 
@@ -35,7 +33,7 @@ export default function Cart() {
             </button>
           </div>
         ))}
-        <p>Total: $ {totalPrice}</p>
+        {totalPrice > 0 && <p>Total: $ {totalPrice}</p>}
       </div>
     </div>
   );
