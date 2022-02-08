@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { data } from "../products";
 import Item from "./Item";
 import { getFirestore } from "../firebase";
 import "./ItemList.css";
@@ -16,7 +15,14 @@ function ItemList() {
     setIsLoading(true);
 
     const db = getFirestore();
-    const itemCollection = db.collection("items");
+    let itemCollection;
+    if (categoryId) {
+      itemCollection = db
+        .collection("items")
+        .where("categoryId", "==", categoryId);
+    } else {
+      itemCollection = db.collection("items");
+    }
 
     itemCollection
       .get()
@@ -26,19 +32,9 @@ function ItemList() {
           return;
         }
         console.log("hay documentos");
-        // console.log(querySnapShot.docs.map((d) => d.data()));
-
-        if (categoryId) {
-          setProductos(
-            querySnapShot.docs
-              .filter((doc) => doc.categoryId === categoryId)
-              .map((doc) => ({ id: doc.id, ...doc.data() }))
-          );
-        } else {
-          setProductos(
-            querySnapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-          );
-        }
+        setProductos(
+          querySnapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -49,41 +45,12 @@ function ItemList() {
       });
   }, [categoryId]);
 
-  // const promesaProductos = new Promise((response, reject) => {
-  //   setTimeout(() => {
-  //     response(data);
-  //   }, 2000);
-  // });
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-
-  //   promesaProductos
-  //     .then((res) => {
-  //       if (categoryId) {
-  //         setProductos(data.filter((item) => item.categoryId === categoryId));
-  //       } else {
-  //         setProductos(res);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setMessage(true);
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // }, [categoryId]);
-
   const listadoProductos = productos.map((producto) => (
     <Item key={producto.id} producto={producto} />
   ));
 
-  console.log(productos);
-
   return (
     <div>
-      {JSON.stringify(productos)}
       <h1>Productos</h1>
       {isLoading ? (
         <div className="loader">
