@@ -9,7 +9,7 @@ export const data = [
       "Modo de sonido: Dolby Atmos, AI Sound.",
     ],
     price: 69999,
-    pictureUrl:
+    imageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_826710-MLA42164194325_062020-O.webp",
   },
   {
@@ -22,7 +22,7 @@ export const data = [
       "Modo de sonido: Dolby Digital Plus, Q-Symphony.",
     ],
     price: 72999,
-    pictureUrl:
+    imageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_787221-MLA48007684849_102021-O.webp",
   },
   {
@@ -35,7 +35,7 @@ export const data = [
       "Modo de sonido: Dolby Audio.",
     ],
     price: 79999,
-    pictureUrl:
+    imageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_711131-MLA46112698238_052021-O.webp",
   },
   {
@@ -48,7 +48,7 @@ export const data = [
       "Es a prueba de agua.",
     ],
     price: 37062,
-    pictureUrl:
+    imageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_859974-MLA48707625843_122021-V.webp",
   },
   {
@@ -61,7 +61,7 @@ export const data = [
       "Memoria 4GB DDR4",
     ],
     price: 44649,
-    pictureUrl:
+    imageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_857500-MLA47818436966_102021-V.webp",
   },
 ];
