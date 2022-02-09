@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [itemId]);
 
   const onAddToCart = (contador) => {
     addItem(producto, contador);
