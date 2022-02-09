@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 function NavBar() {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <nav className="bg-gray-100">
       <div className="max-w-7xl mx-auto px-4">
@@ -49,7 +51,38 @@ function NavBar() {
             </div>
           </div>
           <CartWidget />
+
+          <div className="md:hidden">
+            <button onClick={() => setToggleMenu(!toggleMenu)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
+      {/* mobile menu */}
+      <div className={`${toggleMenu ? "" : "hidden"} md:hidden`}>
+        <NavLink to="/category/audio" className="block py-2 px-4">
+          Audio
+        </NavLink>
+        <NavLink to="/category/computacion" className="block py-2 px-4">
+          Computación
+        </NavLink>
+        <NavLink to="/category/televisores" className="block py-2 px-4">
+          Televisores
+        </NavLink>
       </div>
     </nav>
   );
