@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartProvider";
 import { formatPrice } from "../helpers";
 import "./Cart.css";
+import Form from "./Form";
 
 export default function Cart() {
   const { cart, removeItem, clear } = useContext(cartContext);
@@ -68,6 +69,7 @@ export default function Cart() {
             </div>
           </div>
         )}
+        <Form cart={cart} totalPrice={totalPrice} />
       </div>
     </div>
   );
