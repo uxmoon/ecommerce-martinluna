@@ -51,7 +51,7 @@ function ItemList() {
 
   return (
     <div>
-      <h1 class="text-3xl font-bold underline">Productos</h1>
+      <h1>Productos</h1>
       {isLoading ? (
         <div className="loader">
           <p>Cargando productos...</p>
