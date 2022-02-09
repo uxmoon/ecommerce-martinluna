@@ -59,6 +59,7 @@ export default function Form({ cart, totalPrice }) {
             <div>
               <label htmlFor="userName">Nombre y apellido</label>
               <input
+                required
                 type="text"
                 name="userName"
                 id="userName"
@@ -68,6 +69,7 @@ export default function Form({ cart, totalPrice }) {
             <div>
               <label htmlFor="userEmail">Email</label>
               <input
+                required
                 type="email"
                 name="userEmail"
                 id="userEmail"
@@ -77,6 +79,7 @@ export default function Form({ cart, totalPrice }) {
             <div>
               <label htmlFor="userAddress">Domicilio</label>
               <input
+                required
                 type="text"
                 name="userAddress"
                 id="userAddress"
@@ -86,6 +89,7 @@ export default function Form({ cart, totalPrice }) {
             <div>
               <label htmlFor="userCity">Ciudad</label>
               <input
+                required
                 type="text"
                 name="userCity"
                 id="userCity"
@@ -95,6 +99,7 @@ export default function Form({ cart, totalPrice }) {
             <div>
               <label htmlFor="userState">Estado o provincia</label>
               <input
+                required
                 type="text"
                 name="userState"
                 id="userState"
@@ -102,12 +107,14 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <label htmlFor="userPhone">Telefono</label>
+              <label htmlFor="userPhone">Teléfono</label>
               <input
+                required
                 type="tel"
                 name="userPhone"
                 id="userPhone"
                 ref={userPhoneRef}
+                placeholder="Ej: (011) 2222-3333"
               />
             </div>
             <div>
