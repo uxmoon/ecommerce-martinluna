@@ -69,7 +69,7 @@ export default function Cart() {
             </div>
           </div>
         )}
-        <Form cart={cart} />
+        <Form cart={cart} totalPrice={totalPrice} />
       </div>
     </div>
   );
