@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import firebase from "firebase";
 import { getFirestore } from "../firebase";
-import "./Form.css";
+// import "./Form.css";
 
 export default function Form({ cart, totalPrice }) {
   const [orderId, setOrderId] = useState("");

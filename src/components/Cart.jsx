@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartProvider";
 import { formatPrice } from "../helpers";
-import "./Cart.css";
+// import "./Cart.css";
 import Form from "./Form";
 
 export default function Cart() {

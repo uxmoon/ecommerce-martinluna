@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { formatPrice } from "../helpers";
-import "./ItemDetail.css";
+// import "./ItemDetail.css";
 
 export default function ItemDetail({ producto, onAdd, addedToCart }) {
   const { imageUrl, title, price, description, stock } = producto;
