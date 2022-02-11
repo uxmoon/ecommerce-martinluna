@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../helpers";
-import "./Item.css";
+// import "./Item.css";
 
 function Item({ producto }) {
   const { id, imageUrl, title, price } = producto;

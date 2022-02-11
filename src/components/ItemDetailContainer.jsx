@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { cartContext } from "../context/CartProvider";
 import { getFirestore } from "../firebase";
-import "./ItemDetailContainer.css";
+// import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   const { addItem } = useContext(cartContext);
