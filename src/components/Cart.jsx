@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartProvider";
 import { formatPrice } from "../helpers";
-// import "./Cart.css";
 import Form from "./Form";
 
 export default function Cart() {
@@ -13,64 +12,40 @@ export default function Cart() {
   }, 0);
 
   return (
-    <div className="Cart">
-      <div className="Cart-container">
-        <h1>Carro de compras</h1>
-        {cart.length === 0 ? (
-          <>
-            <p>No hay productos en el carro.</p>
-            <Link to="/" className="Button Button--secondary">
-              Ver productos disponibles
-            </Link>
-          </>
-        ) : (
-          <div className="Cart-row" style={{ marginBottom: "1rem" }}>
-            <div></div>
-            <div>
-              <button
-                className="Button Button--secondary"
-                onClick={() => clear()}
-              >
-                Quitar todos
-              </button>
-            </div>
+    <div className="max-w-7xl mx-auto px-4">
+      <h1>Carro de compras</h1>
+      {cart.length === 0 ? (
+        <>
+          <p>No hay productos en el carro.</p>
+          <Link to="/">Ver productos disponibles</Link>
+        </>
+      ) : (
+        <button onClick={() => clear()}>Quitar todos</button>
+      )}
+      {cart.map((product) => (
+        <div key={product.item.id}>
+          <div>
+            <img src={product.item.imageUrl} alt={product.item.title} />
+            <h3>{product.item.title}</h3>
           </div>
-        )}
-        {cart.map((product) => (
-          <div key={product.item.id} className="Cart-item">
-            <div className="Cart-item-content">
-              <img src={product.item.imageUrl} alt={product.item.title} />
-              <h3>{product.item.title}</h3>
-            </div>
-            <div className="Cart-item-actions">
-              <p>$ {formatPrice(product.item.price)}</p>
-              <p>
-                {product.quantity}{" "}
-                {product.quantity === 1 ? "unidad" : "unidades"}
-              </p>
-              <button
-                className="Button Button--secondary"
-                onClick={() => removeItem(product.item.id)}
-              >
-                Quitar
-              </button>
-            </div>
+          <div>
+            <p>$ {formatPrice(product.item.price)}</p>
+            <p>
+              {product.quantity}{" "}
+              {product.quantity === 1 ? "unidad" : "unidades"}
+            </p>
+            <button onClick={() => removeItem(product.item.id)}>Quitar</button>
           </div>
-        ))}
-        {totalPrice > 0 && (
-          <div className="Cart-row">
-            <div></div>
-            <div>
-              <p className="Cart-total">
-                Total
-                <br />
-                <strong>$ {formatPrice(totalPrice)}</strong>
-              </p>
-            </div>
-          </div>
-        )}
-        <Form cart={cart} totalPrice={totalPrice} />
-      </div>
+        </div>
+      ))}
+      {totalPrice > 0 && (
+        <p>
+          Total
+          <br />
+          <strong>$ {formatPrice(totalPrice)}</strong>
+        </p>
+      )}
+      <Form cart={cart} totalPrice={totalPrice} />
     </div>
   );
 }

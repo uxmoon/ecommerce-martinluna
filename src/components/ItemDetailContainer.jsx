@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { cartContext } from "../context/CartProvider";
 import { getFirestore } from "../firebase";
-// import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   const { addItem } = useContext(cartContext);
@@ -43,20 +42,18 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <div className="ItemDetailContainer">
-      <div className="ItemDetailContainer-container">
-        {isLoading ? (
-          <div className="loader">
-            <p>Cargando detalles de producto...</p>
-          </div>
-        ) : (
-          <ItemDetail
-            onAdd={onAddToCart}
-            producto={producto}
-            addedToCart={addedToCart}
-          />
-        )}
-      </div>
+    <div className="max-w-7xl mx-auto px-4">
+      {isLoading ? (
+        <div>
+          <p>Cargando detalles de producto...</p>
+        </div>
+      ) : (
+        <ItemDetail
+          onAdd={onAddToCart}
+          producto={producto}
+          addedToCart={addedToCart}
+        />
+      )}
     </div>
   );
 };

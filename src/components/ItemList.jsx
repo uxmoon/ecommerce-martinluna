@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item";
 import { getFirestore } from "../firebase";
-// import "./ItemList.css";
 
 function ItemList() {
   const { categoryId } = useParams();
@@ -53,18 +52,18 @@ function ItemList() {
     <div>
       <h1>Productos</h1>
       {isLoading ? (
-        <div className="loader">
+        <div>
           <p>Cargando productos...</p>
         </div>
       ) : (
-        <div className="ItemList">{listadoProductos}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {listadoProductos}
+        </div>
       )}
       {message && (
-        <div className="message alert">
-          <h2 className="title">Dificultades técnicas</h2>
-          <p className="description">
-            No se pueden mostrar los productos en este momento.
-          </p>
+        <div>
+          <h2>Dificultades técnicas</h2>
+          <p>No se pueden mostrar los productos en este momento.</p>
         </div>
       )}
     </div>

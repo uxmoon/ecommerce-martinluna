@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import firebase from "firebase";
 import { getFirestore } from "../firebase";
-// import "./Form.css";
 
 export default function Form({ cart, totalPrice }) {
   const [orderId, setOrderId] = useState("");
@@ -45,7 +44,7 @@ export default function Form({ cart, totalPrice }) {
   }
 
   return (
-    <div className="Form">
+    <div>
       {orderId && (
         <>
           <h2>Gracias por su compra</h2>
@@ -118,7 +117,7 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <button className="Button">Finalizar compra</button>
+              <button>Finalizar compra</button>
             </div>
           </form>
         </>
