@@ -12,7 +12,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <main className="max-w-7xl mx-auto px-4">
       <h1>Carro de compras</h1>
       {cart.length === 0 ? (
         <>
@@ -46,6 +46,6 @@ export default function Cart() {
         </p>
       )}
       <Form cart={cart} totalPrice={totalPrice} />
-    </div>
+    </main>
   );
 }

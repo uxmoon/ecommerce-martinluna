@@ -42,7 +42,7 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <main className="max-w-7xl mx-auto px-4">
       {isLoading ? (
         <div>
           <p>Cargando detalles de producto...</p>
@@ -54,7 +54,7 @@ const ItemDetailContainer = () => {
           addedToCart={addedToCart}
         />
       )}
-    </div>
+    </main>
   );
 };
 
