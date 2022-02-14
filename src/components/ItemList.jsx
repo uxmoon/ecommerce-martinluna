@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item";
 import { getFirestore } from "../firebase";
+import { IconLoader } from "./Icons";
 
 function ItemList() {
   const { categoryId } = useParams();
@@ -52,8 +53,11 @@ function ItemList() {
     <div>
       <h1>Productos</h1>
       {isLoading ? (
-        <div>
-          <p>Cargando productos...</p>
+        <div className="bg-slate-50 text-center p-8 mt-8 rounded">
+          <p className="text-2xl">
+            {IconLoader}
+            Cargando detalles de producto...
+          </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
