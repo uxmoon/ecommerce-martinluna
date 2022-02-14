@@ -32,43 +32,40 @@ export default function Cart() {
         </>
       ) : (
         <>
-          <div
-            className="flex justify-between items-center mb-4
-
-          border-b md:border-0 border-b-neutral pb-4 md:pb-0
-          "
-          >
+          <div className="flex justify-between items-center mb-4 border-b md:border-0 border-b-neutral pb-4 md:pb-0">
             <p className="text-xl">
               {totalItems} {totalItems === 1 ? "unidad" : "unidades"}
             </p>
             <button
               onClick={() => clear()}
-              className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 p-3 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded"
+              className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 px-4 py-3 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded"
             >
               Quitar todos
             </button>
           </div>
         </>
       )}
-      <div className="hidden md:grid grid-cols-5 bg-slate-100 py-2 rounded mb-4">
-        <p className="px-4 col-span-2">Producto</p>
-        <p className="px-4">Precio</p>
-        <p className="text-center px-4">Cantidad</p>
-        <p className="text-right px-4">Total</p>
-      </div>
+      {cart.length > 0 && (
+        <div className="hidden md:grid grid-cols-5 bg-slate-100 py-2 rounded mb-4">
+          <p className="px-4 col-span-2">Producto</p>
+          <p className="px-4">Precio</p>
+          <p className="text-center px-4">Cantidad</p>
+          <p className="text-right px-4">Total</p>
+        </div>
+      )}
       {cart.map((product) => (
         <article
           key={product.item.id}
           className="md:grid grid-cols-5 border-b border-b-neutral pb-4 mb-4"
         >
-          <div className="md:px-4">
+          <div className="md:pr-4">
             <img
               src={product.item.imageUrl}
               alt={product.item.title}
               className="mx-auto"
             />
           </div>
-          <div className="md:px-4">
+          <div className="md:pr-4">
             <h3 className="font-semibold">{product.item.title}</h3>
           </div>
           <div className="md:px-4">
