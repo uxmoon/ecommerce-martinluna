@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { cartContext } from "../context/CartProvider";
 import { getFirestore } from "../firebase";
+import { IconLoader } from "./Icons";
 
 const ItemDetailContainer = () => {
   const { addItem } = useContext(cartContext);
@@ -44,8 +45,11 @@ const ItemDetailContainer = () => {
   return (
     <main className="max-w-7xl mx-auto px-4">
       {isLoading ? (
-        <div>
-          <p>Cargando detalles de producto...</p>
+        <div className="bg-slate-50 text-center p-8 mt-8 rounded">
+          <p className="text-2xl">
+            {IconLoader}
+            Cargando detalles de producto...
+          </p>
         </div>
       ) : (
         <ItemDetail
