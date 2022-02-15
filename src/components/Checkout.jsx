@@ -6,11 +6,14 @@ export default function Checkout() {
   const { order } = useContext(cartContext);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 pt-8 pb-8">
+    <main className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
         Orden completada
       </h1>
-      <p className="mb-4">Gracias por su compra.</p>
+      <p className="mb-4">
+        Su orden de compra fue generada exitosamente. Nuestro equipo se
+        contactará a la brevedad para comunicarle las formas de pago.
+      </p>
       <div className="rounded border border-gray-300 p-4 mb-8">
         <p className="text-xl text-center font-semibold">
           Su orden es {order.orderId}

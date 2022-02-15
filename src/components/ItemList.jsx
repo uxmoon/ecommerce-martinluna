@@ -51,7 +51,9 @@ function ItemList() {
 
   return (
     <div>
-      <h1>Productos</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+        Productos
+      </h1>
       {isLoading ? (
         <div className="bg-slate-50 text-center p-8 mt-8 rounded">
           <p className="text-2xl">

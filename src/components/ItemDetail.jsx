@@ -6,7 +6,7 @@ export default function ItemDetail({ producto, onAdd, addedToCart }) {
   const { imageUrl, title, price, description, stock } = producto;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 pt-8">
+    <div className="grid grid-cols-1 md:grid-cols-2">
       <div>
         <img src={imageUrl} alt={title} />
       </div>

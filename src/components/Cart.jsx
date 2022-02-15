@@ -16,7 +16,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 pt-8 pb-8">
+    <main className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
         Carro de compras
       </h1>
