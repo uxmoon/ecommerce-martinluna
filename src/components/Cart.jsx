@@ -93,7 +93,7 @@ export default function Cart() {
           Total $ {formatPrice(totalPrice)}
         </p>
       )}
-      <Form cart={cart} totalPrice={totalPrice} />
+      {cart.length > 0 && <Form cart={cart} totalPrice={totalPrice} />}
     </main>
   );
 }
