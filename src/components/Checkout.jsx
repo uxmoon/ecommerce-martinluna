@@ -4,9 +4,7 @@ import { formatPrice } from "../helpers";
 
 export default function Checkout() {
   const { order } = useContext(cartContext);
-  console.log("checkout", order);
-  console.log("buyer", order.buyer);
-  console.log("items", order.items);
+
   return (
     <main className="max-w-7xl mx-auto px-4 pt-8 pb-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
@@ -50,27 +48,33 @@ export default function Checkout() {
             <p className="text-right px-4">Total</p>
           </div>
           <ul>
-            {order.items.map((i) => (
+            {order.items.map((product) => (
               <li
-                key={i.item.id}
+                key={product.item.id}
                 className="md:grid grid-cols-3 mb-4 border-b border-b-gray-300 pb-4"
               >
                 <div className="col-span-2">
                   <div className="md:grid grid-cols-2">
                     <div className="pr-4 mb-2 md:mb-0">
-                      <img src={i.item.imageUrl} alt={i.item.title} />
+                      <img
+                        src={product.item.imageUrl}
+                        alt={product.item.title}
+                      />
                     </div>
                     <div>
-                      <h3 className="font-semibold">{i.item.title}</h3>
-                      <p className="mb-2">$ {formatPrice(i.item.price)}</p>
+                      <h3 className="font-semibold">{product.item.title}</h3>
+                      <p className="mb-2">
+                        $ {formatPrice(product.item.price)}
+                      </p>
                       <p className="text-gray-500 text-sm">
-                        {i.quantity} {i.quantity === 1 ? "unidad" : "unidades"}
+                        {product.quantity}{" "}
+                        {product.quantity === 1 ? "unidad" : "unidades"}
                       </p>
                     </div>
                   </div>
                 </div>
                 <p className="hidden md:block text-right pr-4">
-                  Total: $ {formatPrice(i.item.price * i.quantity)}
+                  Total: $ {formatPrice(product.item.price * product.quantity)}
                 </p>
               </li>
             ))}
