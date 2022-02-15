@@ -1,8 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import firebase from "firebase";
 import { getFirestore } from "../firebase";
+import { cartContext } from "../context/CartProvider";
+import { useHistory } from "react-router-dom";
 
 export default function Form({ cart, totalPrice }) {
+  const { addOrder } = useContext(cartContext);
+
   const [orderId, setOrderId] = useState("");
 
   const userNameRef = useRef();
@@ -11,6 +15,8 @@ export default function Form({ cart, totalPrice }) {
   const userStateRef = useRef();
   const userEmailRef = useRef();
   const userPhoneRef = useRef();
+
+  let history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -37,6 +43,8 @@ export default function Form({ cart, totalPrice }) {
       .then(({ id }) => {
         console.log(`orden ingresada: ${id}`);
         setOrderId(id);
+        addOrder(orderUser);
+        history.push(`/cart/${id}`);
       })
       .catch((err) => {
         console.log(err);
