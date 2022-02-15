@@ -13,20 +13,38 @@ export default function Checkout() {
         Orden completada
       </h1>
       <p className="mb-4">Gracias por su compra.</p>
-      <div className="md:grid grid-cols-3">
-        <div className="bg-slate-100 p-4 rounded-md mb-8 md:mb-0">
+      <div className="rounded border border-gray-300 p-4 mb-8">
+        <p className="text-xl text-center font-semibold">
+          Su orden es {order.orderId}
+        </p>
+      </div>
+      <div className="lg:grid grid-cols-3">
+        <div className="bg-slate-100 p-4 rounded-md mb-8 lg:mb-0">
           <h2 className="text-xl font-semibold mb-4">Datos del comprador</h2>
           <ul>
-            <li>{order.buyer.name}</li>
-            <li>{order.buyer.email}</li>
-            <li>{order.buyer.phone}</li>
-            <li>{order.buyer.address}</li>
+            <li className="mb-4">
+              <span className="block text-neutral-600 text-sm">
+                Nombre y apellido
+              </span>
+              {order.buyer.name}
+            </li>
+            <li className="mb-4">
+              <span className="block text-neutral-600 text-sm">Email</span>
+              {order.buyer.email}
+            </li>
+            <li className="mb-4">
+              <span className="block text-neutral-600 text-sm">Teléfono</span>
+              {order.buyer.phone}
+            </li>
             <li>
+              <span className="block text-neutral-600 text-sm">Domicilio</span>
+              {order.buyer.address}
+              <br />
               {order.buyer.city}, {order.buyer.state}
             </li>
           </ul>
         </div>
-        <div className="md:px-4 col-span-2">
+        <div className="lg:pl-4 col-span-2">
           <div className="hidden md:grid grid-cols-2 bg-slate-100 py-2 rounded mb-4">
             <p className="px-4">Productos</p>
             <p className="text-right px-4">Total</p>
