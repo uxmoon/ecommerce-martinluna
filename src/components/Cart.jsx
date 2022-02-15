@@ -16,7 +16,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 pt-8">
+    <main className="max-w-7xl mx-auto px-4 pt-8 pb-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
         Carro de compras
       </h1>
@@ -94,7 +94,7 @@ export default function Cart() {
         </article>
       ))}
       {totalPrice > 0 && (
-        <p className="text-center md:text-right text-2xl font-bold mb-4">
+        <p className="text-center md:text-right text-2xl font-bold mb-12 md:mb-8">
           Total $ {formatPrice(totalPrice)}
         </p>
       )}
