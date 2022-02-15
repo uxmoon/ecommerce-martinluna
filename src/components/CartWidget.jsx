@@ -10,7 +10,7 @@ const CartWidget = () => {
     return total + item.quantity;
   }, 0);
 
-  return (
+  return cart.length ? (
     <Link
       to="/cart"
       className="hidden md:flex items-center space-x-2 bg-gray-600 text-white rounded px-2 py-1"
@@ -18,6 +18,8 @@ const CartWidget = () => {
       {IconCart}
       <span>{totalItems}</span>
     </Link>
+  ) : (
+    ""
   );
 };
 

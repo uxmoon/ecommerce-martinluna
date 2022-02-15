@@ -5,7 +5,7 @@ import { cartContext } from "../context/CartProvider";
 import { useHistory } from "react-router-dom";
 
 export default function Form({ cart, totalPrice }) {
-  const { addOrder } = useContext(cartContext);
+  const { addOrder, clearCart } = useContext(cartContext);
 
   const userNameRef = useRef();
   const userAddressRef = useRef();
@@ -41,6 +41,7 @@ export default function Form({ cart, totalPrice }) {
       .then(({ id }) => {
         console.log(`orden ingresada: ${id}`);
         addOrder({ ...orderUser, orderId: id });
+        clearCart();
         history.push(`/cart/${id}`);
       })
       .catch((err) => {
