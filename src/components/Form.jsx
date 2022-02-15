@@ -1,9 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import firebase from "firebase";
 import { getFirestore } from "../firebase";
+import { cartContext } from "../context/CartProvider";
+import { useHistory } from "react-router-dom";
 
 export default function Form({ cart, totalPrice }) {
-  const [orderId, setOrderId] = useState("");
+  const { addOrder } = useContext(cartContext);
 
   const userNameRef = useRef();
   const userAddressRef = useRef();
@@ -11,6 +13,8 @@ export default function Form({ cart, totalPrice }) {
   const userStateRef = useRef();
   const userEmailRef = useRef();
   const userPhoneRef = useRef();
+
+  let history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -36,7 +40,8 @@ export default function Form({ cart, totalPrice }) {
       .add(orderUser)
       .then(({ id }) => {
         console.log(`orden ingresada: ${id}`);
-        setOrderId(id);
+        addOrder({ ...orderUser, orderId: id });
+        history.push(`/cart/${id}`);
       })
       .catch((err) => {
         console.log(err);
@@ -44,20 +49,22 @@ export default function Form({ cart, totalPrice }) {
   }
 
   return (
-    <div>
-      {orderId && (
-        <>
-          <h2>Gracias por su compra</h2>
-          <p>Su orden es: {orderId}</p>
-        </>
-      )}
-      {cart.length > 0 && !orderId && (
-        <>
-          <h3>Datos del comprador</h3>
-          <form onSubmit={handleSubmit}>
+    <div className="md:grid grid-cols-3 gap-4 bg-slate-100 p-4 rounded-md">
+      <div>
+        <h3 className="text-xl sm:text-2xl font-bold">Datos del comprador</h3>
+        <p className="mb-4">
+          Para generar la orden necesitamos los siguientes datos.
+        </p>
+      </div>
+      <div className="col-span-2">
+        <form onSubmit={handleSubmit}>
+          <div className="md:grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="userName">Nombre y apellido</label>
+              <label className="block mb-2 text-neutral-800" htmlFor="userName">
+                Nombre y apellido
+              </label>
               <input
+                className="w-full mb-4 rounded px-4 py-2 border border-gray-300"
                 required
                 type="text"
                 name="userName"
@@ -66,8 +73,14 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <label htmlFor="userEmail">Email</label>
+              <label
+                className="block mb-2 text-neutral-800"
+                htmlFor="userEmail"
+              >
+                Email
+              </label>
               <input
+                className="w-full mb-4 rounded px-4 py-2 border border-gray-300"
                 required
                 type="email"
                 name="userEmail"
@@ -76,8 +89,14 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <label htmlFor="userAddress">Domicilio</label>
+              <label
+                className="block mb-2 text-neutral-800"
+                htmlFor="userAddress"
+              >
+                Domicilio
+              </label>
               <input
+                className="w-full mb-4 rounded px-4 py-2 border border-gray-300"
                 required
                 type="text"
                 name="userAddress"
@@ -86,8 +105,11 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <label htmlFor="userCity">Ciudad</label>
+              <label className="block mb-2 text-neutral-800" htmlFor="userCity">
+                Ciudad
+              </label>
               <input
+                className="w-full mb-4 rounded px-4 py-2 border border-gray-300"
                 required
                 type="text"
                 name="userCity"
@@ -96,8 +118,14 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <label htmlFor="userState">Estado o provincia</label>
+              <label
+                className="block mb-2 text-neutral-800"
+                htmlFor="userState"
+              >
+                Estado o provincia
+              </label>
               <input
+                className="w-full mb-4 rounded px-4 py-2 border border-gray-300"
                 required
                 type="text"
                 name="userState"
@@ -106,8 +134,14 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div>
-              <label htmlFor="userPhone">Teléfono</label>
+              <label
+                className="block mb-2 text-neutral-800"
+                htmlFor="userPhone"
+              >
+                Teléfono
+              </label>
               <input
+                className="w-full mb-4 rounded px-4 py-2 border border-gray-300"
                 required
                 type="tel"
                 name="userPhone"
@@ -116,14 +150,14 @@ export default function Form({ cart, totalPrice }) {
                 placeholder="Ej: (011) 2222-3333"
               />
             </div>
-            <div>
-              <button className="bg-blue-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-blue-700 outline outline-offset-2 focus:bg-blue-700">
+            <div className="md:text-right col-span-2">
+              <button className="bg-blue-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-blue-700 outline outline-offset-2 focus:bg-blue-700 w-full md:w-auto ">
                 Finalizar compra
               </button>
             </div>
-          </form>
-        </>
-      )}
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
