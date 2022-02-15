@@ -32,12 +32,7 @@ export default function Cart() {
         </>
       ) : (
         <>
-          <div
-            className="flex justify-between items-center mb-4
-
-          border-b md:border-0 border-b-neutral pb-4 md:pb-0
-          "
-          >
+          <div className="flex justify-between items-center mb-4 border-b md:border-0 border-b-neutral pb-4 md:pb-0">
             <p className="text-xl">
               {totalItems} {totalItems === 1 ? "unidad" : "unidades"}
             </p>
@@ -48,14 +43,14 @@ export default function Cart() {
               Quitar todos
             </button>
           </div>
+          <div className="hidden md:grid grid-cols-5 bg-slate-100 py-2 rounded mb-4">
+            <p className="px-4 col-span-2">Producto</p>
+            <p className="px-4">Precio</p>
+            <p className="text-center px-4">Cantidad</p>
+            <p className="text-right px-4">Total</p>
+          </div>
         </>
       )}
-      <div className="hidden md:grid grid-cols-5 bg-slate-100 py-2 rounded mb-4">
-        <p className="px-4 col-span-2">Producto</p>
-        <p className="px-4">Precio</p>
-        <p className="text-center px-4">Cantidad</p>
-        <p className="text-right px-4">Total</p>
-      </div>
       {cart.map((product) => (
         <article
           key={product.item.id}
