@@ -16,7 +16,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 pt-8">
+    <main className="max-w-7xl mx-auto px-4 pt-8 pb-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
         Carro de compras
       </h1>
@@ -43,15 +43,13 @@ export default function Cart() {
               Quitar todos
             </button>
           </div>
+          <div className="hidden md:grid grid-cols-5 bg-slate-100 py-2 rounded mb-4">
+            <p className="px-4 col-span-2">Producto</p>
+            <p className="px-4">Precio</p>
+            <p className="text-center px-4">Cantidad</p>
+            <p className="text-right px-4">Total</p>
+          </div>
         </>
-      )}
-      {cart.length > 0 && (
-        <div className="hidden md:grid grid-cols-5 bg-slate-100 py-2 rounded mb-4">
-          <p className="px-4 col-span-2">Producto</p>
-          <p className="px-4">Precio</p>
-          <p className="text-center px-4">Cantidad</p>
-          <p className="text-right px-4">Total</p>
-        </div>
       )}
       {cart.map((product) => (
         <article
@@ -91,11 +89,11 @@ export default function Cart() {
         </article>
       ))}
       {totalPrice > 0 && (
-        <p className="text-center md:text-right text-2xl font-bold mb-4">
+        <p className="text-center md:text-right text-2xl font-bold mb-12 md:mb-8">
           Total $ {formatPrice(totalPrice)}
         </p>
       )}
-      <Form cart={cart} totalPrice={totalPrice} />
+      {cart.length > 0 && <Form cart={cart} totalPrice={totalPrice} />}
     </main>
   );
 }
