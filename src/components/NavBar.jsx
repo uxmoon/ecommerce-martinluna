@@ -17,7 +17,7 @@ function NavBar() {
           <div className="flex space-x-4">
             <NavLink to="/" className="flex py-2 md:px-2">
               {IconLogo}
-              <span className="font-bold">Mi Tienda</span>
+              <span className="font-bold">STRIMIN</span>
             </NavLink>
 
             <div className="hidden md:flex space-x-2">
