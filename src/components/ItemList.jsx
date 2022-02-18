@@ -50,21 +50,23 @@ function ItemList() {
   ));
 
   return (
-    <div>
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-        Productos
-      </h1>
+    <>
       {isLoading ? (
         <div className="bg-slate-50 text-center p-8 mt-8 rounded">
           <p className="text-2xl">
             {IconLoader}
-            Cargando detalles de producto...
+            Cargando productos...
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {listadoProductos}
-        </div>
+        <>
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+            Productos
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {listadoProductos}
+          </div>
+        </>
       )}
       {message && (
         <div>
@@ -72,7 +74,7 @@ function ItemList() {
           <p>No se pueden mostrar los productos en este momento.</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
