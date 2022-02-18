@@ -7,8 +7,8 @@ export default function ItemDetail({ producto, onAdd, addedToCart }) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
-      <div>
-        <img src={imageUrl} alt={title} />
+      <div className="flex justify-center">
+        <img src={imageUrl} alt={title} className="object-contain h-96 w-96" />
       </div>
       <div>
         <h1 className="text-2xl font-semibold mb-2">{title}</h1>
