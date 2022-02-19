@@ -43,7 +43,7 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <main className="max-w-7xl mx-auto px-4 pt-8 pb-16">
+    <main className="w-full max-w-7xl mx-auto px-4 pt-8 pb-16">
       {isLoading ? (
         <div className="bg-slate-50 text-center p-8 mt-8 rounded">
           <p className="text-2xl">

@@ -6,7 +6,7 @@ export default function Checkout() {
   const { order } = useContext(cartContext);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 pt-8 pb-16">
+    <main className="w-full max-w-7xl mx-auto px-4 pt-8 pb-16">
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
         Orden completada
       </h1>
