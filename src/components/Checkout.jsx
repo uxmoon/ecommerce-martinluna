@@ -16,7 +16,7 @@ export default function Checkout() {
       </p>
       <div className="rounded border border-gray-300 p-4 mb-8">
         <p className="text-xl text-center font-semibold">
-          Su orden es {order.orderId}
+          Su orden es <span className="text-indigo-600">{order.orderId}</span>
         </p>
       </div>
       <div className="lg:grid grid-cols-3">
@@ -62,6 +62,7 @@ export default function Checkout() {
                       <img
                         src={product.item.imageUrl}
                         alt={product.item.title}
+                        className="object-contain h-72 w-72 md:h-48 md:w-48"
                       />
                     </div>
                     <div>

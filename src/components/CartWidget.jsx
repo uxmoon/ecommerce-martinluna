@@ -13,7 +13,7 @@ const CartWidget = () => {
   return cart.length ? (
     <Link
       to="/cart"
-      className="hidden md:flex items-center space-x-2 bg-gray-600 text-white rounded px-2 py-1"
+      className="hidden md:flex items-center space-x-2 bg-white text-indigo-600 rounded px-2 py-1"
     >
       {IconCart}
       <span>{totalItems}</span>

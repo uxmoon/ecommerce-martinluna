@@ -52,7 +52,7 @@ function ItemList() {
   return (
     <>
       {isLoading ? (
-        <div className="bg-slate-50 text-center p-8 mt-8 rounded">
+        <div className="bg-indigo-100 text-center p-8 mt-8 rounded">
           <p className="text-2xl">
             {IconLoader}
             Cargando productos...

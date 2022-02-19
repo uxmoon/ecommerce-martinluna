@@ -56,11 +56,11 @@ export default function Cart() {
           key={product.item.id}
           className="md:grid grid-cols-5 border-b border-b-neutral pb-4 mb-4"
         >
-          <div className="md:pr-4">
+          <div className="md:pr-4 flex justify-center">
             <img
               src={product.item.imageUrl}
               alt={product.item.title}
-              className="mx-auto"
+              className="object-contain h-72 w-72 md:h-48 md:w-48 mb-4"
             />
           </div>
           <div className="md:pr-4">

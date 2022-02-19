@@ -11,11 +11,11 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-gray-100">
+    <nav className="bg-indigo-600">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-2">
           <div className="flex space-x-4">
-            <NavLink to="/" className="flex py-2 md:px-2">
+            <NavLink to="/" className="flex py-2 md:px-2 text-white">
               {IconLogo}
               <span className="ml-1 font-bold">STRIMIN</span>
             </NavLink>
@@ -23,19 +23,19 @@ function NavBar() {
             <div className="hidden md:flex space-x-2">
               <NavLink
                 to="/category/camaras"
-                className="py-2 px-3 hover:bg-gray-600 hover:text-white rounded"
+                className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
               >
                 Cámaras
               </NavLink>
               <NavLink
                 to="/category/iluminacion"
-                className="py-2 px-3 hover:bg-gray-600 hover:text-white rounded"
+                className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
               >
                 Iluminación
               </NavLink>
               <NavLink
                 to="/category/microfonos"
-                className="py-2 px-3 hover:bg-gray-600 hover:text-white rounded"
+                className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
               >
                 Micrófonos
               </NavLink>
@@ -44,7 +44,7 @@ function NavBar() {
           <CartWidget />
 
           <div className="md:hidden">
-            <button onClick={handleToggle}>
+            <button onClick={handleToggle} className="text-white">
               {toggleMenu ? IconClose : IconMenu}
             </button>
           </div>
@@ -53,21 +53,21 @@ function NavBar() {
       <div className={`${toggleMenu ? "" : "hidden"} md:hidden`}>
         <NavLink
           to="/category/camaras"
-          className="block py-2 px-4"
+          className="text-white block py-2 px-4"
           onClick={handleToggle}
         >
           Cámaras
         </NavLink>
         <NavLink
           to="/category/iluminacion"
-          className="block py-2 px-4"
+          className="text-white block py-2 px-4"
           onClick={handleToggle}
         >
           Iluminación
         </NavLink>
         <NavLink
           to="/category/microfonos"
-          className="block py-2 px-4"
+          className="text-white block py-2 px-4"
           onClick={handleToggle}
         >
           Micrófonos
