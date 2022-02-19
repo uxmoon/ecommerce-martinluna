@@ -5,19 +5,19 @@ function Item({ producto }) {
   const { id, imageUrl, title, price } = producto;
 
   return (
-    <div className="transform -skew-y-3 bg-white p-8 border shadow-md">
-      <div className="transform skew-y-3">
-        <Link to={`/item/${id}`}>
+    <Link to={`/item/${id}`}>
+      <div className="transform -skew-y-3 bg-white p-8 border shadow hover:shadow-lg transition-shadow duration-150">
+        <div className="transform skew-y-3">
           <img
             src={imageUrl}
             alt={title}
             className="object-contain h-48 w-96 mb-4"
           />
           <h2 className="text-xl font-semibold">{title}</h2>
-        </Link>
-        <p className="text-lg text-gray-800">$ {formatPrice(price)}</p>
+          <p className="text-lg text-gray-800">$ {formatPrice(price)}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
