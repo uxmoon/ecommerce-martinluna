@@ -17,27 +17,27 @@ function NavBar() {
           <div className="flex space-x-4">
             <NavLink to="/" className="flex py-2 md:px-2">
               {IconLogo}
-              <span className="font-bold">STRIMIN</span>
+              <span className="ml-1 font-bold">STRIMIN</span>
             </NavLink>
 
             <div className="hidden md:flex space-x-2">
               <NavLink
-                to="/category/audio"
+                to="/category/camaras"
                 className="py-2 px-3 hover:bg-gray-600 hover:text-white rounded"
               >
-                Audio
+                Cámaras
               </NavLink>
               <NavLink
-                to="/category/computacion"
+                to="/category/iluminacion"
                 className="py-2 px-3 hover:bg-gray-600 hover:text-white rounded"
               >
-                Computación
+                Iluminación
               </NavLink>
               <NavLink
-                to="/category/televisores"
+                to="/category/microfonos"
                 className="py-2 px-3 hover:bg-gray-600 hover:text-white rounded"
               >
-                Televisores
+                Micrófonos
               </NavLink>
             </div>
           </div>
@@ -52,25 +52,25 @@ function NavBar() {
       </div>
       <div className={`${toggleMenu ? "" : "hidden"} md:hidden`}>
         <NavLink
-          to="/category/audio"
+          to="/category/camaras"
           className="block py-2 px-4"
           onClick={handleToggle}
         >
-          Audio
+          Cámaras
         </NavLink>
         <NavLink
-          to="/category/computacion"
+          to="/category/iluminacion"
           className="block py-2 px-4"
           onClick={handleToggle}
         >
-          Computación
+          Iluminación
         </NavLink>
         <NavLink
-          to="/category/televisores"
+          to="/category/microfonos"
           className="block py-2 px-4"
           onClick={handleToggle}
         >
-          Televisores
+          Micrófonos
         </NavLink>
       </div>
     </nav>
