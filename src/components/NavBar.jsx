@@ -2,9 +2,11 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { IconLogo, IconMenu, IconClose } from "./Icons";
+import { formatLink } from "../helpers";
 
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const menuLinks = ["Cámaras", "Iluminación", "Micrófonos"];
 
   const handleToggle = () => {
     setToggleMenu(!toggleMenu);
@@ -21,24 +23,14 @@ export default function NavBar() {
             </NavLink>
 
             <div className="hidden md:flex space-x-2">
-              <NavLink
-                to="/category/camaras"
-                className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
-              >
-                Cámaras
-              </NavLink>
-              <NavLink
-                to="/category/iluminacion"
-                className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
-              >
-                Iluminación
-              </NavLink>
-              <NavLink
-                to="/category/microfonos"
-                className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
-              >
-                Micrófonos
-              </NavLink>
+              {menuLinks.map((menu) => (
+                <NavLink
+                  to={`/category/${formatLink(menu)}`}
+                  className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
+                >
+                  {menu}
+                </NavLink>
+              ))}
             </div>
           </div>
           <CartWidget />
@@ -51,27 +43,15 @@ export default function NavBar() {
         </div>
       </div>
       <div className={`${toggleMenu ? "" : "hidden"} md:hidden`}>
-        <NavLink
-          to="/category/camaras"
-          className="text-white block py-2 px-4"
-          onClick={handleToggle}
-        >
-          Cámaras
-        </NavLink>
-        <NavLink
-          to="/category/iluminacion"
-          className="text-white block py-2 px-4"
-          onClick={handleToggle}
-        >
-          Iluminación
-        </NavLink>
-        <NavLink
-          to="/category/microfonos"
-          className="text-white block py-2 px-4"
-          onClick={handleToggle}
-        >
-          Micrófonos
-        </NavLink>
+        {menuLinks.map((menu) => (
+          <NavLink
+            to={`/category/${formatLink(menu)}`}
+            className="text-white block py-2 px-4"
+            onClick={handleToggle}
+          >
+            {menu}
+          </NavLink>
+        ))}
       </div>
     </nav>
   );
