@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import CartProvider from "./context/CartProvider";
+import NoMatch from "./components/NoMatch";
 
 export default function App() {
   return (
@@ -28,6 +29,9 @@ export default function App() {
             </Route>
             <Route exact path="/cart/:cartId">
               <Checkout />
+            </Route>
+            <Route path="*">
+              <NoMatch />
             </Route>
           </Switch>
           <Footer />
