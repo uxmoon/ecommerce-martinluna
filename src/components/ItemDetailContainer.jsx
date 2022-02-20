@@ -9,7 +9,7 @@ export default function ItemDetailContainer() {
   const { addItem } = useContext(cartContext);
   const { itemId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  const [producto, setProducto] = useState({});
+  const [product, setProduct] = useState({});
   const [addedToCart, setAddedToCart] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ItemDetailContainer() {
           return;
         }
         console.log("item found");
-        setProducto({ id: doc.id, ...doc.data() });
+        setProduct({ id: doc.id, ...doc.data() });
       })
       .catch((err) => {
         console.log(err);
@@ -38,7 +38,7 @@ export default function ItemDetailContainer() {
   }, [itemId]);
 
   const onAddToCart = (contador) => {
-    addItem(producto, contador);
+    addItem(product, contador);
     setAddedToCart(true);
   };
 
@@ -54,7 +54,7 @@ export default function ItemDetailContainer() {
       ) : (
         <ItemDetail
           onAdd={onAddToCart}
-          producto={producto}
+          product={product}
           addedToCart={addedToCart}
         />
       )}

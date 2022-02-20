@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../helpers";
 
-export default function Item({ producto }) {
-  const { id, imageUrl, title, price } = producto;
+export default function Item({ product }) {
+  const { id, imageUrl, title, price } = product;
 
   return (
     <Link to={`/item/${id}`}>

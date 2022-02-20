@@ -7,7 +7,7 @@ import { IconLoader } from "./Icons";
 export default function ItemList() {
   const { categoryId } = useParams();
 
-  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(false);
 
@@ -32,7 +32,7 @@ export default function ItemList() {
           return;
         }
         console.log("hay documentos");
-        setProductos(
+        setProducts(
           querySnapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         );
       })
@@ -45,8 +45,8 @@ export default function ItemList() {
       });
   }, [categoryId]);
 
-  const listadoProductos = productos.map((producto) => (
-    <Item key={producto.id} producto={producto} />
+  const listadoProductos = products.map((product) => (
+    <Item key={product.id} product={product} />
   ));
 
   return (

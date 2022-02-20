@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { formatPrice } from "../helpers";
 
-export default function ItemDetail({ producto, onAdd, addedToCart }) {
-  const { imageUrl, title, price, description, stock } = producto;
+export default function ItemDetail({ product, onAdd, addedToCart }) {
+  const { imageUrl, title, price, description, stock } = product;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
