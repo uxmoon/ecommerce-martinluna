@@ -7,7 +7,7 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import CartProvider from "./context/CartProvider";
 
-function App() {
+export default function App() {
   return (
     <CartProvider>
       <BrowserRouter>
@@ -36,5 +36,3 @@ function App() {
     </CartProvider>
   );
 }
-
-export default App;

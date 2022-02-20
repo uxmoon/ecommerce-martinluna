@@ -4,7 +4,7 @@ import Item from "./Item";
 import { getFirestore } from "../firebase";
 import { IconLoader } from "./Icons";
 
-function ItemList() {
+export default function ItemList() {
   const { categoryId } = useParams();
 
   const [productos, setProductos] = useState([]);
@@ -77,5 +77,3 @@ function ItemList() {
     </>
   );
 }
-
-export default ItemList;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartProvider";
 import { IconCart } from "./Icons";
 
-const CartWidget = () => {
+export default function CartWidget() {
   const { cart } = useContext(cartContext);
 
   const totalItems = cart.reduce((total, item) => {
@@ -21,6 +21,4 @@ const CartWidget = () => {
   ) : (
     ""
   );
-};
-
-export default CartWidget;
+}

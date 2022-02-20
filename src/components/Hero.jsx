@@ -1,6 +1,6 @@
 import hero from "../images/strimin-hero.jpg";
 
-const Hero = () => {
+export default function Hero() {
   return (
     <div className="relative bg-white overflow-hidden mb-8">
       <div className="max-w-7xl mx-auto">
@@ -44,6 +44,4 @@ const Hero = () => {
       </div>
     </div>
   );
-};
-
-export default Hero;
+}

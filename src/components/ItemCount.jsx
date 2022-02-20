@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IconMinus, IconPlus } from "./Icons";
 
-function ItemCount({ stock, initial, onAdd }) {
+export default function ItemCount({ stock, initial, onAdd }) {
   const [contador, setContador] = useState(initial);
 
   const add = () => {
@@ -50,5 +50,3 @@ function ItemCount({ stock, initial, onAdd }) {
     </>
   );
 }
-
-export default ItemCount;

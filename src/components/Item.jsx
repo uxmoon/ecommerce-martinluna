@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../helpers";
 
-function Item({ producto }) {
+export default function Item({ producto }) {
   const { id, imageUrl, title, price } = producto;
 
   return (
@@ -20,5 +20,3 @@ function Item({ producto }) {
     </Link>
   );
 }
-
-export default Item;

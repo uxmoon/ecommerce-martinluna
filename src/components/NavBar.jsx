@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { IconLogo, IconMenu, IconClose } from "./Icons";
 
-function NavBar() {
+export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const handleToggle = () => {
@@ -76,5 +76,3 @@ function NavBar() {
     </nav>
   );
 }
-
-export default NavBar;

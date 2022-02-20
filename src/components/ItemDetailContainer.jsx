@@ -5,7 +5,7 @@ import { cartContext } from "../context/CartProvider";
 import { getFirestore } from "../firebase";
 import { IconLoader } from "./Icons";
 
-const ItemDetailContainer = () => {
+export default function ItemDetailContainer() {
   const { addItem } = useContext(cartContext);
   const { itemId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -60,6 +60,4 @@ const ItemDetailContainer = () => {
       )}
     </main>
   );
-};
-
-export default ItemDetailContainer;
+}
