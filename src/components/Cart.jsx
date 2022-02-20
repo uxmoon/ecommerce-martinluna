@@ -25,7 +25,7 @@ export default function Cart() {
           <p className="mb-4 text-lg">No hay productos en el carro.</p>
           <Link
             to="/"
-            className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 p-3 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded"
+            className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 p-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
           >
             Ver productos disponibles
           </Link>
@@ -38,7 +38,7 @@ export default function Cart() {
             </p>
             <button
               onClick={() => clear()}
-              className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 px-4 py-3 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded"
+              className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 px-4 py-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
             >
               Quitar todos
             </button>
@@ -64,7 +64,7 @@ export default function Cart() {
             />
           </div>
           <div className="md:pr-4">
-            <h3 className="font-semibold">{product.item.title}</h3>
+            <h2 className="font-semibold">{product.item.title}</h2>
           </div>
           <div className="md:px-4">
             <p className="text-neutral-500 md:text-black mb-4 md:mb-0">
@@ -78,7 +78,7 @@ export default function Cart() {
             </p>
             <button
               onClick={() => removeItem(product.item.id)}
-              className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 px-3 py-2 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded text-sm"
+              className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 px-3 py-2 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded text-sm"
             >
               Quitar
             </button>

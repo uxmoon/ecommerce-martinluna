@@ -22,13 +22,13 @@ export default function ItemDetail({ producto, onAdd, addedToCart }) {
           <>
             <Link
               to="/cart"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-blue-700 outline outline-offset-2 focus:bg-blue-700 mb-4 sm:mr-4 border border-blue-600"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 outline outline-offset-2 focus:bg-indigo-700 mb-4 sm:mr-4 border border-indigo-600"
             >
               Terminar mi compra
             </Link>
             <Link
               to="/"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 px-4 py-3 font-semibold text-blue-600 hover:text-white rounded"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 px-4 py-3 font-semibold text-indigo-600 hover:text-white rounded"
             >
               Seguir comprando
             </Link>

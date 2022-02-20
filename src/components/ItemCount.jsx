@@ -24,7 +24,7 @@ function ItemCount({ stock, initial, onAdd }) {
             type="button"
             onClick={subtract}
             aria-label="Quitar"
-            className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 p-3 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded"
+            className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 p-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
           >
             {IconMinus}
           </button>
@@ -33,17 +33,17 @@ function ItemCount({ stock, initial, onAdd }) {
             type="button"
             onClick={add}
             aria-label="Agregar"
-            className="bg-white hover:bg-blue-600 border border-blue-600 transition-colors duration-150 p-3 font-semibold text-blue-600 hover:text-white inline-flex items-center rounded"
+            className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 p-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
           >
             {IconPlus}
           </button>
         </div>
-        <p className="ml-4">Stock disponible: {stock}</p>
+        <p className="ml-4 text-gray-600">Stock disponible: {stock}</p>
       </div>
 
       <button
         onClick={() => onAdd(contador)}
-        className="bg-blue-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-blue-700 outline outline-offset-2 focus:bg-blue-700 w-full md:w-auto"
+        className="bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 outline outline-offset-2 focus:bg-indigo-700 w-full md:w-auto"
       >
         Agregar al carro
       </button>
