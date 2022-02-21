@@ -22,7 +22,7 @@ export default function ItemDetail({ product, onAdd, addedToCart }) {
           <>
             <Link
               to="/cart"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 outline outline-offset-2 focus:bg-indigo-700 mb-4 sm:mr-4 border border-indigo-600"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 mb-4 sm:mr-4 border border-indigo-600"
             >
               Terminar mi compra
             </Link>

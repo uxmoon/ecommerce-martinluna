@@ -152,7 +152,7 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div className="md:text-right col-span-2">
-              <button className="bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 outline outline-offset-2 focus:bg-indigo-700 w-full md:w-auto">
+              <button className="bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 w-full md:w-auto">
                 Finalizar compra
               </button>
             </div>

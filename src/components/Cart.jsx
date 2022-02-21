@@ -5,7 +5,7 @@ import { formatPrice } from "../helpers";
 import Form from "./Form";
 
 export default function Cart() {
-  const { cart, removeItem, totalItems, clear, totalPrice } = useContext(cartContext);
+  const { cart, removeItem, totalItems, clearCart, totalPrice } = useContext(cartContext);
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 pt-8 pb-16">
@@ -29,7 +29,7 @@ export default function Cart() {
               {totalItems(cart)} {totalItems(cart) === 1 ? "unidad" : "unidades"}
             </p>
             <button
-              onClick={() => clear()}
+              onClick={() => clearCart()}
               className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 px-4 py-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
             >
               Quitar todos
