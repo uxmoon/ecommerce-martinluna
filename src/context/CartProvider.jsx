@@ -33,10 +33,18 @@ export default function CartProvider({ children }) {
     setOrder(data);
   };
 
+  const totalItems = (arr) => {
+    return arr.reduce((sum, val) => sum + val.quantity, 0)
+  }
+
+  const totalPrice = (arr) => {
+    return arr.reduce((sum, val) => sum + (val.item.price * val.quantity), 0)
+  }
+
   return (
     <>
       <cartContext.Provider
-        value={{ cart, order, addItem, addOrder, removeItem, clearCart }}
+        value={{ cart, order, addItem, addOrder, removeItem, clearCart, totalItems, totalPrice }}
       >
         {children}
       </cartContext.Provider>
