@@ -25,6 +25,7 @@ export default function NavBar() {
             <div className="hidden md:flex space-x-2">
               {menuLinks.map((menu) => (
                 <NavLink
+                  key={formatLink(menu)}
                   to={`/category/${formatLink(menu)}`}
                   className="py-2 px-3 text-white hover:bg-white hover:text-indigo-600 rounded"
                 >
@@ -45,6 +46,7 @@ export default function NavBar() {
       <div className={`${toggleMenu ? "" : "hidden"} md:hidden`}>
         {menuLinks.map((menu) => (
           <NavLink
+            key={formatLink(menu)}
             to={`/category/${formatLink(menu)}`}
             className="text-white block py-2 px-4"
             onClick={handleToggle}
