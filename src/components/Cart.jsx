@@ -5,15 +5,7 @@ import { formatPrice } from "../helpers";
 import Form from "./Form";
 
 export default function Cart() {
-  const { cart, removeItem, clear } = useContext(cartContext);
-
-  const totalPrice = cart.reduce((total, item) => {
-    return total + item.item.price * item.quantity;
-  }, 0);
-
-  const totalItems = cart.reduce((total, item) => {
-    return total + item.quantity;
-  }, 0);
+  const { cart, removeItem, totalItems, clear, totalPrice } = useContext(cartContext);
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 pt-8 pb-16">
@@ -34,7 +26,7 @@ export default function Cart() {
         <>
           <div className="flex justify-between items-center mb-4 border-b md:border-0 border-b-neutral pb-4 md:pb-0">
             <p className="text-xl">
-              {totalItems} {totalItems === 1 ? "unidad" : "unidades"}
+              {totalItems(cart)} {totalItems(cart) === 1 ? "unidad" : "unidades"}
             </p>
             <button
               onClick={() => clear()}
@@ -88,12 +80,12 @@ export default function Cart() {
           </div>
         </article>
       ))}
-      {totalPrice > 0 && (
+      {totalPrice(cart) > 0 && (
         <p className="text-center md:text-right text-2xl font-bold mb-12 md:mb-8">
-          Total $ {formatPrice(totalPrice)}
+          Total $ {formatPrice(totalPrice(cart))}
         </p>
       )}
-      {cart.length > 0 && <Form cart={cart} totalPrice={totalPrice} />}
+      {cart.length > 0 && <Form cart={cart} totalPrice={totalPrice(cart)} />}
     </main>
   );
 }
