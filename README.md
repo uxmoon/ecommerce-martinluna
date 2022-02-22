@@ -2,7 +2,7 @@
 
 E-commerce de productos para streaming realizado con [React](https://reactjs.org/) para proyecto final en [Coderhouse](https://www.coderhouse.com/).
 
-![image](https://i.imgur.com/s06SH2Y.gif)
+![image](https://i.imgur.com/hpWF4Wz.gif)
 
 ---
 ## Productos
