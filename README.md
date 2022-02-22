@@ -4,7 +4,6 @@ E-commerce de productos para streaming realizado con [React](https://reactjs.org
 
 ![image](https://i.imgur.com/hpWF4Wz.gif)
 
----
 ## Productos
 
 Los productos se encuentran cargados en Firebase, cada producto tiene los siguientes detalles:
