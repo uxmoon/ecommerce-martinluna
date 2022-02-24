@@ -3,6 +3,7 @@ import firebase from "firebase";
 import { getFirestore } from "../firebase";
 import { cartContext } from "../context/CartProvider";
 import { useHistory } from "react-router-dom";
+import Button from "./Button";
 
 export default function Form({ cart, totalPrice }) {
   const { addOrder, clearCart } = useContext(cartContext);
@@ -152,9 +153,7 @@ export default function Form({ cart, totalPrice }) {
               />
             </div>
             <div className="md:text-right col-span-2">
-              <button className="bg-indigo-600 text-white font-semibold px-4 py-3 rounded shadow transition-colors duration-150 hover:bg-indigo-700 w-full md:w-auto">
-                Finalizar compra
-              </button>
+              <Button>Finalizar compra</Button>
             </div>
           </div>
         </form>
