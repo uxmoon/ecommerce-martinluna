@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IconMinus, IconPlus } from "./Icons";
+import Button from "./Button";
 
 export default function ItemCount({ stock, initial, onAdd }) {
   const [contador, setContador] = useState(initial);
@@ -20,14 +21,15 @@ export default function ItemCount({ stock, initial, onAdd }) {
     <>
       <div className="flex items-center mb-8">
         <div className="flex items-center">
-          <button
+          <Button onPress={subtract}>{IconMinus}</Button>
+          {/* <button
             type="button"
             onClick={subtract}
             aria-label="Quitar"
             className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 p-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
           >
             {IconMinus}
-          </button>
+          </button> */}
           <div className="w-12 text-center font-semibold">{contador}</div>
           <button
             type="button"
