@@ -6,6 +6,20 @@ E-commerce de productos para streaming realizado con [React](https://reactjs.org
 
 ![image](https://i.imgur.com/hpWF4Wz.gif)
 
+## Uso
+
+- Clonar repositorio.
+- Dentro del directorio clonado ejectuar `npm install`.
+- Ejecutar la app con el comando `npm run start`.
+
+## Dependencias
+
+- `react-router-dom v5.2.0`: para generar las rutas de navegación.
+- `firebase v8.8.0` para conectar a Firebase y realizar operaciones en el mismo para crear y actualizar colecciones.
+- `tailwindcss`: Framework de CSS
+  - `postcss`, `postcss-import`, `autoprefixer`: dependencias necesarias para implementar `tailwdindcss`.
+
+---
 ## Productos
 
 Los productos se encuentran cargados en Firebase, cada producto tiene los siguientes detalles:
