@@ -17,7 +17,7 @@ export default function Cart() {
       {cart.length === 0 ? (
         <>
           <p className="mb-4 text-lg">No hay productos en el carro.</p>
-          <ButtonLink path="/" variant="secondary">
+          <ButtonLink to="/" variant="secondary">
             Ver productos disponibles
           </ButtonLink>
         </>

@@ -20,8 +20,8 @@ export default function ItemDetail({ product, onAdd, addedToCart }) {
         <p className="mb-4">{description}</p>
         {addedToCart ? (
           <>
-            <ButtonLink path="/cart">Terminar mi compra</ButtonLink>
-            <ButtonLink path="/" variant="secondary">Seguir comprando</ButtonLink>
+            <ButtonLink to="/cart">Terminar mi compra</ButtonLink>
+            <ButtonLink to="/" variant="secondary">Seguir comprando</ButtonLink>
           </>
         ) : (
           <ItemCount stock={stock} initial={1} onAdd={onAdd} />
