@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartProvider";
 import { formatPrice } from "../helpers";
 import Form from "./Form";
+import ButtonLink from "./ButtonLink";
 
 export default function Cart() {
-  const { cart, removeItem, totalItems, clearCart, totalPrice } = useContext(cartContext);
+  const { cart, removeItem, totalItems, clearCart, totalPrice } =
+    useContext(cartContext);
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 pt-8 pb-16">
@@ -15,18 +16,16 @@ export default function Cart() {
       {cart.length === 0 ? (
         <>
           <p className="mb-4 text-lg">No hay productos en el carro.</p>
-          <Link
-            to="/"
-            className="bg-white hover:bg-indigo-600 border border-indigo-600 transition-colors duration-150 p-3 font-semibold text-indigo-600 hover:text-white inline-flex items-center rounded"
-          >
+          <ButtonLink path="/" variant="secondary">
             Ver productos disponibles
-          </Link>
+          </ButtonLink>
         </>
       ) : (
         <>
           <div className="flex justify-between items-center mb-4 border-b md:border-0 border-b-neutral pb-4 md:pb-0">
             <p className="text-xl">
-              {totalItems(cart)} {totalItems(cart) === 1 ? "unidad" : "unidades"}
+              {totalItems(cart)}{" "}
+              {totalItems(cart) === 1 ? "unidad" : "unidades"}
             </p>
             <button
               onClick={() => clearCart()}
